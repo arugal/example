@@ -1,8 +1,8 @@
-package net.abc.example.swagger.controller;
+package com.github.sunnus3.swagger.controller;
 
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
-import net.abc.example.swagger.model.Model;
+import com.github.sunnus3.swagger.model.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;

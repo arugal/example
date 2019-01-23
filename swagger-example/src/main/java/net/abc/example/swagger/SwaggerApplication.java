@@ -1,4 +1,4 @@
-package net.abc.example.swagger;
+package com.github.sunnus3.swagger;
 
 import com.spring4all.swagger.EnableSwagger2Doc;
 import org.springframework.boot.SpringApplication;

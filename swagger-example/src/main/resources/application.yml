@@ -7,4 +7,4 @@ swagger:
   contact:
     name: example
     email: example@outlook.com
-  base-package: net.abc.example.swagger.controller
+  base-package: com.github.sunnus3.swagger.controller

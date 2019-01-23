@@ -3,32 +3,24 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>example</artifactId>
+        <artifactId>spring-example</artifactId>
         <groupId>com.github.sunnus3</groupId>
         <version>1.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>swagger-example</artifactId>
-
-    <properties>
-        <swagger.spring.boot>1.5.1.RELEASE</swagger.spring.boot>
-    </properties>
+    <artifactId>aop-example</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-        </dependency>
-        <!-- swagger -->
-        <dependency>
-            <groupId>com.spring4all</groupId>
-            <artifactId>spring-boot-starter-swagger</artifactId>
-            <version>${swagger.spring.boot}</version>
+            <groupId>com.github.sunnus3</groupId>
+            <artifactId>spring-example</artifactId>
+            <version>${example.version}</version>
         </dependency>
     </dependencies>
+
 </project>

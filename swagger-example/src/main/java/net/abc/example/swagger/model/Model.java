@@ -1,4 +1,4 @@
-package net.abc.example.swagger.model;
+package com.github.sunnus3.swagger.model;
 
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
