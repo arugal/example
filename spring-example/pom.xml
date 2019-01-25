@@ -13,8 +13,10 @@
     <modules>
         <module>interface-expand</module>
         <module>aop</module>
+        <module>spring-boot-mybatis</module>
+        <module>spring-example-common</module>
     </modules>
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
 
 
     <dependencies>

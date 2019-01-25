@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.github.sunnus3.example.spring.dao.CompanyDao">
+
+    <resultMap id="CompanyMap" type="com.github.sunnus3.example.spring.entity.Company">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="age" column="age"/>
+        <result property="address" column="address"/>
+        <result property="salary" column="salary"/>
+    </resultMap>
+
+    <select id="selectAll" resultMap="CompanyMap">
+        select
+            id,
+            name,
+            age,
+            address,
+            salary
+        from
+            company
+    </select>
+
+    <update id="update" parameterType="com.github.sunnus3.example.spring.entity.Company">
+        update company
+        <set>
+            <if test="name != null">
+                name = #{name},
+            </if>
+            <if test="age != null">
+                age = #{age},
+            </if>
+            <if test="address != null">
+                address = #{address},
+            </if>
+            <if test="salary != null">
+                salary = #{salary},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <delete id="delete" parameterType="com.github.sunnus3.example.spring.entity.Company">
+        delete from company where id = #{id}
+    </delete>
+
+</mapper>

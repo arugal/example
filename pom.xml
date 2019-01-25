@@ -12,6 +12,7 @@
         <module>swagger-example</module>
         <module>spring-example</module>
         <module>proxy-example</module>
+        <module>embedded-db-example</module>
     </modules>
     <packaging>pom</packaging>
 

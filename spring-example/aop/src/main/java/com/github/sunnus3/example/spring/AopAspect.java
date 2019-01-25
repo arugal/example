@@ -21,6 +21,14 @@ public class AopAspect {
 
     @Before("aop()")
     public void before(JoinPoint joinPoint){
+        System.out.println(joinPoint.toString());
+        System.out.println(joinPoint.toShortString());
+        System.out.println(joinPoint.toLongString());
+        System.out.println(joinPoint.getThis().getClass().getName());
+        System.out.println(joinPoint.getTarget().getClass().getName());
+        System.out.println(joinPoint.getArgs());
+        System.out.println(joinPoint.getSignature().getName());
+        System.out.println(joinPoint.getKind());
         System.out.println("save aop before");
     }
 
@@ -34,7 +42,7 @@ public class AopAspect {
         System.out.println("save aop after");
     }
 
-    @AfterThrowing(pointcut = "aop()", throwing = "ex")
+//    @AfterThrowing(pointcut = "aop()", throwing = "ex")
     public void afterThrowing(JoinPoint joinPoint, Exception ex){
         System.out.println("save aop afterThrowing");
     }

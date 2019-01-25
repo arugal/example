@@ -18,7 +18,7 @@
         </dependency>
         <dependency>
             <groupId>com.github.sunnus3</groupId>
-            <artifactId>spring-example</artifactId>
+            <artifactId>spring-example-common</artifactId>
             <version>${example.version}</version>
         </dependency>
     </dependencies>

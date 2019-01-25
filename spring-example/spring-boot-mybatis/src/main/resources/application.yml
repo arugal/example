@@ -1,0 +1,22 @@
+# mysql
+spring:
+  datasource:
+    druid:
+      driver-class-name: org.sqlite.JDBC
+      max-active: 1
+      min-idle: 1
+      initial-size: 1
+      url: jdbc:sqlite:example.db
+      username:
+      password:
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.github.sunnus3.example.spring.entity
+
+
+# mybatis sql 打印
+logging:
+  level:
+   com:
+     github:
+       sunnus3: debug
