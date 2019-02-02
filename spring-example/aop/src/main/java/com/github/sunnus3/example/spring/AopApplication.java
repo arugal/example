@@ -1,6 +1,7 @@
 package com.github.sunnus3.example.spring;
 
 import com.github.sunnus3.example.spring.expand.ExpandConfiguration;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Import;
@@ -13,15 +14,8 @@ import org.springframework.context.annotation.Import;
 @Import(value = {UserServiceImpl.class, ExpandConfiguration.class})
 public class AopApplication extends AbstractApplication {
 
-
     public static void main(String[] args) {
         SpringApplication.run(AopApplication.class, args);
     }
 
-    @Override
-    public void run(String... args) throws Exception {
-        super.run(args);
-        AopAspect aopAspect = applicationContext.getBean(AopAspect.class);
-        System.out.println(aopAspect == null);
-    }
 }

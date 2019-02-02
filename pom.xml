@@ -6,13 +6,15 @@
 
     <groupId>com.github.sunnus3</groupId>
     <artifactId>example</artifactId>
-    <version>1.0</version>
+    <version>${example.version}</version>
     <modules>
         <module>sentinel-example</module>
         <module>swagger-example</module>
         <module>spring-example</module>
         <module>proxy-example</module>
         <module>embedded-db-example</module>
+        <module>nacos-example</module>
+        <module>dubbo-example</module>
     </modules>
     <packaging>pom</packaging>
 

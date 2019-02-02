@@ -15,6 +15,9 @@
         <module>aop</module>
         <module>spring-boot-mybatis</module>
         <module>spring-example-common</module>
+        <module>spring-boot-web</module>
+        <module>spring-boot-web-socket</module>
+        <module>spring-boot-actuator</module>
     </modules>
     <packaging>pom</packaging>
 
