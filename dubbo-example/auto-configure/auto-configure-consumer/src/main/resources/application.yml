@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: auto-dubbo-consumer
+
+auto:
+  dubbo:
+    version: 1.0.0

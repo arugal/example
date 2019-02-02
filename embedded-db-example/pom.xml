@@ -13,6 +13,7 @@
         <module>sqlite</module>
         <module>h2</module>
     </modules>
+    <name>Embedded DB Example</name>
 
     <artifactId>embedded-db-example</artifactId>
 

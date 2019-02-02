@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>aop-example</artifactId>
-
+    <name>Spring Example : AOP Example</name>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>

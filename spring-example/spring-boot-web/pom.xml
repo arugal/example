@@ -10,6 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>spring-boot-mvc</artifactId>
+    <name>Spring Example : Spring Boot Web</name>
     <packaging>jar</packaging>
 
     <dependencies>

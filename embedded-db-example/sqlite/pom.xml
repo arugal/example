@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>sqlite</artifactId>
-
+    <name>Embedded DB Example : Sqlite</name>
     <dependencies>
         <dependency>
             <groupId>org.xerial</groupId>

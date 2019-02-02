@@ -1,5 +1,0 @@
-nacos:
-  config:
-    server-addr: dell.com:8848
-  discovery:
-    server-addr: dell.com:8848

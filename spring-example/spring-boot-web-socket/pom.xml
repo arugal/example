@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>spring-boot-web-socket</artifactId>
-
+    <name>Spring Example : Spring Boot Web Socket</name>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>

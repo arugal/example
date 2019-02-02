@@ -10,6 +10,6 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>h2</artifactId>
-
+    <name>Embedded DB Example : H2</name>
 
 </project>

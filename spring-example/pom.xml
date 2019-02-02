@@ -10,6 +10,7 @@
         <version>1.0</version>
     </parent>
     <artifactId>spring-example</artifactId>
+    <name>Spring Example</name>
     <modules>
         <module>interface-expand</module>
         <module>aop-example</module>

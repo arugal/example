@@ -3,19 +3,17 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>spring-example</artifactId>
+        <artifactId>auto-configure</artifactId>
         <groupId>com.github.sunnus3</groupId>
         <version>1.0</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>interface-expand</artifactId>
-    <name>Spring Example : Interface Expand</name>
+    <artifactId>auto-configure-provider</artifactId>
+    <name>Dubbo Example : Auto Configure :: Provider</name>
+
     <dependencies>
-        <dependency>
-            <groupId>com.github.sunnus3</groupId>
-            <artifactId>spring-example-common</artifactId>
-            <version>${example.version}</version>
-        </dependency>
+
     </dependencies>
 </project>
