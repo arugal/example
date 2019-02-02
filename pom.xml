@@ -14,7 +14,6 @@
         <module>proxy-example</module>
         <module>embedded-db-example</module>
         <module>nacos-example</module>
-        <module>dubbo-example</module>
     </modules>
     <packaging>pom</packaging>
 

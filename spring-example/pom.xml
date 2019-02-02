@@ -12,7 +12,7 @@
     <artifactId>spring-example</artifactId>
     <modules>
         <module>interface-expand</module>
-        <module>aop</module>
+        <module>aop-example</module>
         <module>spring-boot-mybatis</module>
         <module>spring-example-common</module>
         <module>spring-boot-web</module>
