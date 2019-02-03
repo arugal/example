@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: nacos-dubbo-provider
+
+nacos:
+  config:
+    server-addr: dell.com:8848
+dubbo:
+  scan:
+    base-packages: com.github.sunnus3.example.dubbo.service
+  protocol:
+    name: dubbo
+    port: 25880
+  registry:
+    address: nacos://dell.com:8848

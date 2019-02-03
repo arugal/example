@@ -19,6 +19,7 @@
         <module>spring-boot-web</module>
         <module>spring-boot-web-socket</module>
         <module>spring-boot-actuator</module>
+        <module>spring-boot-kotiln</module>
     </modules>
     <packaging>pom</packaging>
 

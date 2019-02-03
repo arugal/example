@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: nacos-dubbo-consumer
+dubbo:
+  registry:
+    address: nacos://dell.com:8848
