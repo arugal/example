@@ -14,6 +14,7 @@
         <module>proxy-example</module>
         <module>embedded-db-example</module>
         <module>dubbo-example</module>
+        <module>spring-cloud-example</module>
     </modules>
     <packaging>pom</packaging>
     <name>Example</name>
@@ -24,6 +25,7 @@
         <java.version>1.8</java.version>
         <lombok.version>1.18.4</lombok.version>
         <example.version>1.0</example.version>
+        <java.main.class>Main</java.main.class>
     </properties>
 
     <dependencyManagement>
@@ -45,6 +47,54 @@
 
 
     <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>2.0.6.RELEASE</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <configuration>
+                        <classesDirectory>target/classes/</classesDirectory>
+                        <archive>
+                            <manifest>
+                                <mainClass>${java.main.class}</mainClass>
+                                <!-- 打包时 MANIFEST.MF文件不记录的时间戳版本 -->
+                                <useUniqueVersions>false</useUniqueVersions>
+                                <addClasspath>true</addClasspath>
+                                <classpathPrefix>lib/</classpathPrefix>
+                            </manifest>
+                            <manifestEntries>
+                                <Class-Path>.</Class-Path>
+                            </manifestEntries>
+                        </archive>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-dependency-plugin</artifactId>
+                    <executions>
+                        <execution>
+                            <id>copy-dependencies</id>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>copy-dependencies</goal>
+                            </goals>
+                            <configuration>
+                                <type>jar</type>
+                                <includeTypes>jar</includeTypes>
+                                <outputDirectory>
+                                    ${project.build.directory}/lib
+                                </outputDirectory>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

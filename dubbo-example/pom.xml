@@ -13,7 +13,6 @@
     <name>Dubbo Example</name>
     <packaging>pom</packaging>
     <modules>
-        <module>dubbo-spring-boot</module>
         <module>dubbo-example-api</module>
         <module>auto-configure</module>
         <module>dubbo-registry-nacos</module>

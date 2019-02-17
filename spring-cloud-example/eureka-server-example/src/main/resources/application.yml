@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: eureka-server
+server:
+  port: 9001
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false # 是否注册
+    fetch-registry: false # 是否检索服务
+  server:
+    enable-self-preservation: true # 自保护机制，短时间丢失过多客户端时，那么这个节点将进入自保护模式，不再注销任何服务

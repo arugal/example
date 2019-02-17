@@ -22,9 +22,7 @@ public class AutoConsumerApplication {
 
     @Bean
     public ApplicationRunner runner(){
-        return args -> {
-              logger.info(sayService.say("consumer"));
-        };
+        return args -> logger.info(sayService.say("consumer"));
     }
 
     public static void main(String[] args) {
