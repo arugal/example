@@ -21,6 +21,7 @@
         <module>netty-example</module>
         <module>elasticsearch-example</module>
         <module>druid-example</module>
+        <module>agent-example</module>
     </modules>
     <packaging>pom</packaging>
     <name>Example</name>
