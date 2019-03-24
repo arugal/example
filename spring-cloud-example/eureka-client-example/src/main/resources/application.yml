@@ -1,7 +1,0 @@
-spring:
-  application:
-    name: eureka-client
-eureka:
-  client:
-    service-url:
-      defaultZone: http://192.168.31.108:9001/eureka/

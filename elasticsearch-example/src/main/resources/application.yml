@@ -1,0 +1,26 @@
+spring:
+  data:
+    elasticsearch:
+      cluster-nodes: huawei.cloud:9300
+      cluster-name: docker-cluster
+  datasource:
+    druid:
+      url: jdbc:mysql://huawei.cloud/github_explore?characterEncoding=utf-8
+      username: root
+      password: root.2019
+      driver-class-name: com.mysql.jdbc.Driver
+      max-active: 10
+      min-idle: 3
+      initial-size: 5
+  aop:
+    proxy-target-class: true
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.github.arugal.example.es.dao
+
+# mybatis sql 打印
+logging:
+  level:
+    com:
+      github:
+        arugal: debug

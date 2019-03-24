@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: api-gatway
+server:
+  port: 8888
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://dell.com:9001/eureka/
+zuul:
+  routes:
+    eureka-producer: /**
+

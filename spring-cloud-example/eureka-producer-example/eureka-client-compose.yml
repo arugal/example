@@ -1,0 +1,21 @@
+version: '3.7'
+
+
+services:
+  eureka-client1:
+    image:  eureka-client:1.0
+    container_name: eureka-client1
+    environment:
+      server_port: 9091
+      application_name: eureka-producer
+    network_mode: 'host'
+
+  eureka-client2:
+    image:  eureka-client:1.0
+    container_name: eureka-client2
+    environment:
+      server_port: 9092
+      application_name: eureka-producer
+    network_mode: 'host'
+
+

@@ -21,4 +21,7 @@ public class SwaggerController {
             @ApiParam(required = true, name = "age", defaultValue = "1") @RequestParam Integer age){
         return new Model(name, age);
     }
+
+
+
 }

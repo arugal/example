@@ -9,6 +9,12 @@ public class UserServiceImpl implements UserService{
     @Override
     public int save(User user) {
         System.out.println("execute save method!");
+        print();
         return 1;
+    }
+
+
+    public void print(){
+        System.out.println("print-method");
     }
 }

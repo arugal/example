@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    druid:
+      url: jdbc:mysql://dell.com:3306/github_explore?characterEncoding=utf-8
+      username: root
+      password: root.2019
+      driver-class-name: com.mysql.jdbc.Driver
+      max-active: 10
+      min-idle: 3
+      initial-size: 5

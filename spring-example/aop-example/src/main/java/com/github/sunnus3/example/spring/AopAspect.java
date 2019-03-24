@@ -20,6 +20,7 @@ public class AopAspect {
 
     @Before("aop()")
     public void before(JoinPoint joinPoint) {
+        System.out.println("引用:"+(joinPoint.getTarget() == joinPoint.getThis()));
         System.out.println(joinPoint.toString());
         System.out.println(joinPoint.toShortString());
         System.out.println(joinPoint.toLongString());

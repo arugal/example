@@ -6,7 +6,7 @@
 
     <groupId>com.github.sunnus3</groupId>
     <artifactId>example</artifactId>
-    <version>${example.version}</version>
+    <version>1.0</version>
     <modules>
         <module>sentinel-example</module>
         <module>swagger-example</module>
@@ -15,6 +15,12 @@
         <module>embedded-db-example</module>
         <module>dubbo-example</module>
         <module>spring-cloud-example</module>
+        <module>rxjava-example</module>
+        <module>redis-example</module>
+        <module>jib-example</module>
+        <module>netty-example</module>
+        <module>elasticsearch-example</module>
+        <module>druid-example</module>
     </modules>
     <packaging>pom</packaging>
     <name>Example</name>
@@ -22,6 +28,7 @@
 
     <properties>
         <spring.boot.version>2.1.1.RELEASE</spring.boot.version>
+        <spring.version>5.1.3.RELEASE</spring.version>
         <java.version>1.8</java.version>
         <lombok.version>1.18.4</lombok.version>
         <example.version>1.0</example.version>
@@ -36,11 +43,6 @@
                 <version>${spring.boot.version}</version>
                 <scope>import</scope>
                 <type>pom</type>
-            </dependency>
-            <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <version>${lombok.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

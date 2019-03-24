@@ -10,4 +10,7 @@ eureka:
     register-with-eureka: false # 是否注册
     fetch-registry: false # 是否检索服务
   server:
-    enable-self-preservation: true # 自保护机制，短时间丢失过多客户端时，那么这个节点将进入自保护模式，不再注销任何服务
+    enable-self-preservation: false # 自保护机制，短时间丢失过多客户端时，那么这个节点将进入自保护模式，不再注销任何服务
+    eviction-interval-timer-in-ms: 90 # 服务端每隔 n 秒刷新服务列表，将无效服务删除
+  data-center: dell # 数据中心
+  environment: dell # 环境

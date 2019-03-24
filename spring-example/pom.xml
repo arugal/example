@@ -20,6 +20,7 @@
         <module>spring-boot-web-socket</module>
         <module>spring-boot-actuator</module>
         <module>spring-boot-kotiln</module>
+        <module>spring-cache-redis</module>
     </modules>
     <packaging>pom</packaging>
 

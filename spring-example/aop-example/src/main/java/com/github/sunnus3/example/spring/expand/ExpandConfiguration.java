@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class ExpandConfiguration {
 
-    @Bean
+//    @Bean
     public RegexpMethodPointcutAdvisor regexpMethodPointcutAdvisor(){
         RegexpMethodPointcutAdvisor regexpMethodPointcutAdvisor = new RegexpMethodPointcutAdvisor();
         regexpMethodPointcutAdvisor.setAdvice(new ExpandAfterReturningAdvice());

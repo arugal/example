@@ -13,18 +13,18 @@ public class CglibDynamicProxy implements MethodInterceptor {
 
     @Override
     public Object intercept(Object o, Method method, Object[] objects, MethodProxy methodProxy) throws Throwable {
-        System.out.println("CglibDynamicProxy before");
+        System.out.println("target class:" + o.getClass().getName() + "/method" + method.getName() + "/methodProxy:" +
+                methodProxy.getSuperName());
         Object result = null;
         try {
             result = methodProxy.invokeSuper(o, objects);
-        }catch (Throwable e){
+        } catch (Throwable e) {
             result = e.getClass().getName();
         }
-        if(result instanceof String){
+        if (result instanceof String) {
             String str = (String) result;
             result = str + " after return";
         }
-        System.out.println("CglibDynamicProxy after");
         return result;
     }
 }

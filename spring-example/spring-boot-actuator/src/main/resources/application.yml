@@ -16,4 +16,4 @@ management:
     health:
       show-details: always
     shutdown:
-      enabled: true
+      enabled: false

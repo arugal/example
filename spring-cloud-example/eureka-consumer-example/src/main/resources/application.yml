@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: eureka-consumer
+eureka:
+  client:
+    service-url:
+      defaultZone: http://dell.com:9001/eureka/
+
+
+feign:
+  hystrix:
+    enabled: true # FeginClient 开启 Hystrix
+
+
+# 在 Fegin 模块中使用 Hystrix 时，需与 Ribbon 的超时时间一同配置
+hystrix:
+  threadpool:
+    HystrixSayHelloController:
+      coreSize: 2
+      maximumSize: 10
+      maxQueueSize: 10
+  command:
+    ECommand:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 4000 # 根据 commandKey 单独设计超时时间
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000 # hystrix 超时时间
+
+ribbon:
+  ReadTimeout: 3000
+  ConnectTimeout: 3000 # ribbo 超时时间
+

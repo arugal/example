@@ -15,7 +15,11 @@
     <modules>
         <module>ribbon-example</module>
         <module>eureka-server-example</module>
-        <module>eureka-client-example</module>
+        <module>eureka-producer-example</module>
+        <module>eureka-consumer-example</module>
+        <module>eureka-api</module>
+        <module>hystrix-example</module>
+        <module>zuul-example</module>
     </modules>
 
     <dependencyManagement>
