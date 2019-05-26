@@ -3,6 +3,7 @@ package com.github.arugal.example.grpc;
 import com.github.arugal.example.grpc.gencode.HelloRequest;
 import com.github.arugal.example.grpc.gencode.HelloResponse;
 import com.github.arugal.example.grpc.gencode.HelloSericeGrpc;
+import com.google.common.util.concurrent.ListenableFuture;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 
@@ -26,6 +27,13 @@ public class GRPCClient {
                     .setLastName("wei")
                     .build());
             System.out.println(response.getGreeting());
+
+            HelloSericeGrpc.HelloSericeFutureStub futureStub = HelloSericeGrpc.newFutureStub(channel);
+            ListenableFuture future = futureStub.hello(HelloRequest.newBuilder()
+                    .setFirstName("li")
+                    .setLastName("li")
+                    .build());
+
         } catch (Exception e) {
             e.printStackTrace();
         } finally {

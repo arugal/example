@@ -1,10 +1,17 @@
 spring:
   datasource:
     druid:
-      url: jdbc:mysql://dell.com:3306/github_explore?characterEncoding=utf-8
+      url: jdbc:mysql://10.42.0.1:3306/mysql?characterEncoding=utf-8
       username: root
       password: root.2019
       driver-class-name: com.mysql.jdbc.Driver
-      max-active: 10
-      min-idle: 3
-      initial-size: 5
+      max-active: 120
+      min-idle: 120
+      initial-size: 120
+      max-wait: 5000
+      remove-abandoned: false
+      stat-view-servlet:
+        enabled: true
+      remove-abandoned-timeout-millis: 10000
+      time-between-log-stats-millis: 10000
+      time-between-eviction-runs-millis: 10000

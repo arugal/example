@@ -18,6 +18,11 @@ public class AopAspect {
     public void aop() {
     }
 
+    @AdviceName(value = "")
+    public void a(){
+
+    }
+
     @Before("aop()")
     public void before(JoinPoint joinPoint) {
         System.out.println("引用:"+(joinPoint.getTarget() == joinPoint.getThis()));

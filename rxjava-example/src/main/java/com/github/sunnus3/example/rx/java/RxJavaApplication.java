@@ -1,5 +1,6 @@
 package com.github.sunnus3.example.rx.java;
 
+import io.reactivex.Flowable;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
@@ -13,6 +14,8 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author: zhangwei
@@ -31,7 +34,7 @@ public class RxJavaApplication {
     @Bean
     public ApplicationRunner observableRunner() {
         return (args) -> {
-            for (int i = 0; i < 3; i++) {
+            for(int i = 0; i < 3; i++) {
                 Observable.create(new ObservableOnSubscribe<Integer>() {
                     @Override
                     public void subscribe(ObservableEmitter<Integer> observableEmitter) throws Exception {
@@ -45,38 +48,14 @@ public class RxJavaApplication {
                         observableEmitter.onComplete();
                     }
                 }).subscribeOn(Schedulers.io())
-                        .subscribe(new Observer<Integer>() {
-
-                            private int i;
-                            private Disposable disposable;
-
-                            @Override
-                            public void onSubscribe(Disposable disposable) {
-                                this.disposable = disposable;
-                            }
-
-                            @Override
-                            public void onNext(Integer integer) {
-                                printThread("onNext");
-                                logger.info("onNext {}", integer);
-                            }
-
-                            @Override
-                            public void onError(Throwable throwable) {
-                                logger.error(throwable.getMessage());
-                            }
-
-                            @Override
-                            public void onComplete() {
-                                logger.info("onComplete");
-                            }
-                        });
+                        .observeOn(Schedulers.io())
+                        .subscribe(System.out::println);
             }
         };
     }
 
     @Bean
-    public ApplicationRunner mapRunner(){
+    public ApplicationRunner mapRunner() {
         return (args) -> {
             Observable.create(new ObservableOnSubscribe<Integer>() {
                 @Override
@@ -116,9 +95,33 @@ public class RxJavaApplication {
     }
 
     @Bean
+    public ApplicationRunner flowableRunner() {
+        return (args) -> {
+            Flowable.just("Hello world").subscribe(System.out::println);
+        };
+    }
+
+
+    @Bean
     public ApplicationRunner concatRunner(){
         return (args) -> {
 
+        };
+    }
+
+    @Bean
+    public ApplicationRunner intervalRunner() {
+        return (args) -> {
+            Disposable disposable = Flowable.interval(1, TimeUnit.SECONDS)
+                    .doOnNext((l) -> {
+                        System.out.println("accpect: doOnNext:" + l);
+                    })
+                    .observeOn(Schedulers.io())
+                    .subscribe((l) -> {
+                        System.out.println("accept: save to file:"+l);
+                    });
+
+            disposable.dispose();
         };
     }
 
