@@ -14,47 +14,40 @@ import org.openjdk.jmh.runner.RunnerException;
 import org.openjdk.jmh.runner.options.Options;
 import org.openjdk.jmh.runner.options.OptionsBuilder;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * @author: zhangwei
+ * @date: 2019-06-06/10:22
+ */
 @BenchmarkMode(Mode.Throughput)
 @OutputTimeUnit(TimeUnit.MILLISECONDS)
 @State(Scope.Thread)
 @Fork(2)
 @Warmup(iterations = 4)
 @Measurement(iterations = 5)
-public class ConsumerThreadTest {
-    private LinkedList<Object> container = new LinkedList<Object>();
-    private static final Object o = new Object();
-    private static final List list = new ArrayList();
-
-    static {
-        for (int i = 0; i < 100; i++) {
-            list.add(0);
-        }
-    }
-
+public class StringJoinTest {
 
     @Benchmark
-    public void testAdd() {
-        for (int i = 0; i < 100; i++) {
-            container.add(o);
-        }
-        container.clear();
+    public void testJoinDirect() {
+        String str = "a" + "b" + "c";
     }
 
     @Benchmark
-    public void testAddAll(){
-        container.addAll(list);
-        container.clear();
+    public void testJoinBuilder() {
+        new StringBuilder().append("a").append("b").append("c").toString();
     }
+
+    @Benchmark
+    public void testJoinConcat() {
+        "a".concat("b").concat("c");
+    }
+
 
     @BenchmarkMode(Mode.AverageTime)
     @OutputTimeUnit(TimeUnit.MICROSECONDS)
     public static void main(String[] args) throws RunnerException {
-        Options options = new OptionsBuilder().include(ConsumerThreadTest.class.getSimpleName()).build();
+        Options options = new OptionsBuilder().include(StringJoinTest.class.getSimpleName()).build();
         new Runner(options).run();
     }
 }
