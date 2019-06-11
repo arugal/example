@@ -24,6 +24,7 @@
         <module>agent-example</module>
         <module>grpc-example</module>
         <module>storm-example</module>
+        <module>jmh-example</module>
     </modules>
     <packaging>pom</packaging>
     <name>Example</name>

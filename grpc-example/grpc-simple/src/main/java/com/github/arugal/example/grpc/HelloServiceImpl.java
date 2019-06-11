@@ -25,4 +25,10 @@ public class HelloServiceImpl extends HelloSericeGrpc.HelloSericeImplBase {
         responseObserver.onNext(response);
         responseObserver.onCompleted();;
     }
+
+
+    @Override
+    public StreamObserver<HelloRequest> collect(StreamObserver<HelloResponse> responseObserver) {
+        return super.collect(responseObserver);
+    }
 }

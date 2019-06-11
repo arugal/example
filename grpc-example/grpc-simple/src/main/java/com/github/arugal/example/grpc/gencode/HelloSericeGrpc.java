@@ -59,6 +59,38 @@ public final class HelloSericeGrpc {
      return getHelloMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.github.arugal.example.grpc.gencode.HelloRequest,
+      com.github.arugal.example.grpc.gencode.HelloResponse> getCollectMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "collect",
+      requestType = com.github.arugal.example.grpc.gencode.HelloRequest.class,
+      responseType = com.github.arugal.example.grpc.gencode.HelloResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+  public static io.grpc.MethodDescriptor<com.github.arugal.example.grpc.gencode.HelloRequest,
+      com.github.arugal.example.grpc.gencode.HelloResponse> getCollectMethod() {
+    io.grpc.MethodDescriptor<com.github.arugal.example.grpc.gencode.HelloRequest, com.github.arugal.example.grpc.gencode.HelloResponse> getCollectMethod;
+    if ((getCollectMethod = HelloSericeGrpc.getCollectMethod) == null) {
+      synchronized (HelloSericeGrpc.class) {
+        if ((getCollectMethod = HelloSericeGrpc.getCollectMethod) == null) {
+          HelloSericeGrpc.getCollectMethod = getCollectMethod = 
+              io.grpc.MethodDescriptor.<com.github.arugal.example.grpc.gencode.HelloRequest, com.github.arugal.example.grpc.gencode.HelloResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+              .setFullMethodName(generateFullMethodName(
+                  "com.github.arugal.example.grpc.gencode.HelloSerice", "collect"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.github.arugal.example.grpc.gencode.HelloRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.github.arugal.example.grpc.gencode.HelloResponse.getDefaultInstance()))
+                  .setSchemaDescriptor(new HelloSericeMethodDescriptorSupplier("collect"))
+                  .build();
+          }
+        }
+     }
+     return getCollectMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -93,6 +125,13 @@ public final class HelloSericeGrpc {
       asyncUnimplementedUnaryCall(getHelloMethod(), responseObserver);
     }
 
+    /**
+     */
+    public io.grpc.stub.StreamObserver<com.github.arugal.example.grpc.gencode.HelloRequest> collect(
+        io.grpc.stub.StreamObserver<com.github.arugal.example.grpc.gencode.HelloResponse> responseObserver) {
+      return asyncUnimplementedStreamingCall(getCollectMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -102,6 +141,13 @@ public final class HelloSericeGrpc {
                 com.github.arugal.example.grpc.gencode.HelloRequest,
                 com.github.arugal.example.grpc.gencode.HelloResponse>(
                   this, METHODID_HELLO)))
+          .addMethod(
+            getCollectMethod(),
+            asyncClientStreamingCall(
+              new MethodHandlers<
+                com.github.arugal.example.grpc.gencode.HelloRequest,
+                com.github.arugal.example.grpc.gencode.HelloResponse>(
+                  this, METHODID_COLLECT)))
           .build();
     }
   }
@@ -130,6 +176,14 @@ public final class HelloSericeGrpc {
         io.grpc.stub.StreamObserver<com.github.arugal.example.grpc.gencode.HelloResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getHelloMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public io.grpc.stub.StreamObserver<com.github.arugal.example.grpc.gencode.HelloRequest> collect(
+        io.grpc.stub.StreamObserver<com.github.arugal.example.grpc.gencode.HelloResponse> responseObserver) {
+      return asyncClientStreamingCall(
+          getChannel().newCall(getCollectMethod(), getCallOptions()), responseObserver);
     }
   }
 
@@ -187,6 +241,7 @@ public final class HelloSericeGrpc {
   }
 
   private static final int METHODID_HELLO = 0;
+  private static final int METHODID_COLLECT = 1;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -219,6 +274,9 @@ public final class HelloSericeGrpc {
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_COLLECT:
+          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.collect(
+              (io.grpc.stub.StreamObserver<com.github.arugal.example.grpc.gencode.HelloResponse>) responseObserver);
         default:
           throw new AssertionError();
       }
@@ -271,6 +329,7 @@ public final class HelloSericeGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new HelloSericeFileDescriptorSupplier())
               .addMethod(getHelloMethod())
+              .addMethod(getCollectMethod())
               .build();
         }
       }

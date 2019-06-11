@@ -22,6 +22,7 @@
         <module>spring-boot-kotiln</module>
         <module>spring-cache-redis</module>
         <module>spring-boot-h2</module>
+        <module>spring-boot-graphql</module>
     </modules>
     <packaging>pom</packaging>
 

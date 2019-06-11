@@ -36,11 +36,14 @@ public final class HelloSerive {
       "\n\021HelloSerive.proto\022&com.github.arugal.e" +
       "xample.grpc.gencode\"3\n\014HelloRequest\022\021\n\tf" +
       "irstName\030\001 \001(\t\022\020\n\010lastName\030\002 \001(\t\"!\n\rHell" +
-      "oResponse\022\020\n\010greeting\030\001 \001(\t2\203\001\n\013HelloSer" +
+      "oResponse\022\020\n\010greeting\030\001 \001(\t2\375\001\n\013HelloSer" +
       "ice\022t\n\005hello\0224.com.github.arugal.example" +
       ".grpc.gencode.HelloRequest\0325.com.github." +
       "arugal.example.grpc.gencode.HelloRespons" +
-      "eB\002P\001b\006proto3"
+      "e\022x\n\007collect\0224.com.github.arugal.example" +
+      ".grpc.gencode.HelloRequest\0325.com.github." +
+      "arugal.example.grpc.gencode.HelloRespons" +
+      "e(\001B\002P\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

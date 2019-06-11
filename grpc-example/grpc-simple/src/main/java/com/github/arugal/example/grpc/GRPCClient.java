@@ -6,6 +6,7 @@ import com.github.arugal.example.grpc.gencode.HelloSericeGrpc;
 import com.google.common.util.concurrent.ListenableFuture;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
+import io.grpc.stub.StreamObserver;
 
 import java.util.concurrent.TimeUnit;
 
@@ -34,10 +35,34 @@ public class GRPCClient {
                     .setLastName("li")
                     .build());
 
+            HelloSericeGrpc.HelloSericeStub sericeStub = HelloSericeGrpc.newStub(channel);
+
+            StreamObserver<HelloRequest> streamObserver = sericeStub.collect(new StreamObserver<HelloResponse>() {
+                @Override
+                public void onNext(HelloResponse helloResponse) {
+                    System.out.println("Response:" + helloResponse.getGreeting());
+                }
+
+                @Override
+                public void onError(Throwable throwable) {
+                    System.out.println("Response error");
+                }
+
+                @Override
+                public void onCompleted() {
+                    System.out.println("Response onCompleted");
+                }
+            });
+
+            HelloRequest request = HelloRequest.newBuilder().setFirstName("z").setLastName("w").build();
+            streamObserver.onNext(request);
+            streamObserver.onNext(request);
+            streamObserver.onCompleted();
+
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            if (channel != null) {
+            if(channel != null) {
                 try {
                     channel.shutdown().awaitTermination(5, TimeUnit.SECONDS);
                 } catch (Exception e) {
