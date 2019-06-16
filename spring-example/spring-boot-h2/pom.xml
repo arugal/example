@@ -11,6 +11,8 @@
 
     <artifactId>spring-boot-h2</artifactId>
 
+    <name>Spring Example : Spring Boot H2</name>
+
 
     <dependencies>
         <dependency>
