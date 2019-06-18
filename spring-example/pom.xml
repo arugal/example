@@ -23,6 +23,7 @@
         <module>spring-cache-redis</module>
         <module>spring-boot-h2</module>
         <module>spring-boot-graphql</module>
+        <module>spring-boot-kafka</module>
     </modules>
     <packaging>pom</packaging>
 
