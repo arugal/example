@@ -24,6 +24,7 @@
         <module>spring-boot-h2</module>
         <module>spring-boot-graphql</module>
         <module>spring-boot-kafka</module>
+        <module>spring-boot-async</module>
     </modules>
     <packaging>pom</packaging>
 
