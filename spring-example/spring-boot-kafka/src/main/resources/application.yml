@@ -1,25 +1,3 @@
-spring:
-  kafka:
-    bootstrap-servers: 192.168.31.108:9092
-
-    producer:
-      retries: 0 # 重试次数
-      batch-size: 16384
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.apache.kafka.common.serialization.StringSerializer
-      properties:
-        linger.ms: 1
-      buffer-memory: 335544232
-
-    consumer:
-      enable-auto-commit: false
-      auto-commit-interval: 100ms
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.apache.kafka.common.serialization.StringSerializer
-      properties:
-        session.timeout.ms: 15000
-
 kafka:
-  topic:
-    group-id: topicGroupId
-    topic-name: topic1
+  bootstrap: kafka:9092
+  group: group-id

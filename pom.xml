@@ -25,6 +25,7 @@
         <module>grpc-example</module>
         <module>storm-example</module>
         <module>jmh-example</module>
+        <module>listen-example</module>
     </modules>
     <packaging>pom</packaging>
     <name>Example</name>
@@ -36,6 +37,8 @@
         <java.version>1.8</java.version>
         <lombok.version>1.18.4</lombok.version>
         <example.version>1.0</example.version>
+        <junit.version>4.12</junit.version>
+        <guava.version>20.0</guava.version>
         <java.main.class>Main</java.main.class>
     </properties>
 
@@ -47,6 +50,17 @@
                 <version>${spring.boot.version}</version>
                 <scope>import</scope>
                 <type>pom</type>
+            </dependency>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
