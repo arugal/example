@@ -25,6 +25,7 @@
         <module>spring-boot-graphql</module>
         <module>spring-boot-kafka</module>
         <module>spring-boot-async</module>
+        <module>spring-boot-docker</module>
     </modules>
     <packaging>pom</packaging>
 

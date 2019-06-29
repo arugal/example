@@ -3,7 +3,6 @@ package com.github.arugal.listen.example;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.experimental.Accessors;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
