@@ -10,8 +10,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>redis-example</artifactId>
+    <packaging>pom</packaging>
 
     <name>Redis Example</name>
+    <modules>
+        <module>redis-base-example</module>
+        <module>redis-lua-example</module>
+    </modules>
 
     <dependencies>
         <dependency>
