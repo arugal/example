@@ -23,6 +23,7 @@ public class TransactionalService {
 
     /**
      * 如果当前没有事务，就新建一个事务，如果已经存在一个事务，加入这个事务
+     *
      * @throws SQLException
      */
     @Transactional
@@ -30,9 +31,9 @@ public class TransactionalService {
         call();
     }
 
-
     /**
      * 支持当前事务，如果当前没有事务，就以非事务的方式执行
+     *
      * @throws SQLException
      */
     @Transactional(propagation = Propagation.SUPPORTS)
@@ -42,6 +43,7 @@ public class TransactionalService {
 
     /**
      * 不实用 spring 事务
+     *
      * @throws SQLException
      */
     public void noTransactionSelect() throws SQLException {
@@ -56,8 +58,8 @@ public class TransactionalService {
             statement.execute("select 1");
         } catch (SQLException e) {
             e.printStackTrace();
-        }finally {
-            if(statement != null){
+        } finally {
+            if(statement != null) {
                 statement.close();
             }
         }

@@ -29,6 +29,9 @@ public class DruidApplication implements ApplicationContextAware {
     @Autowired
     private ApplicationContext applicationContext;
 
+    @Autowired
+    private TransactionalWorker transactionalWorker;
+
     protected static volatile boolean stop = false;
 
     public static void main(String[] args) {
@@ -44,25 +47,30 @@ public class DruidApplication implements ApplicationContextAware {
     private static final CountDownLatch countDownLatch = new CountDownLatch(THREAD_SIZE);
 
 
+    //    @Bean
+    public ApplicationRunner trRunner() {
+        return (args) -> {
+            transactionalWorker.init();
+            transactionalWorker.run();
+        };
+    }
+
     @Bean
     public ApplicationRunner threadRunner() {
-        return new ApplicationRunner() {
-            @Override
-            public void run(ApplicationArguments args) throws Exception {
-                Long startTime = System.currentTimeMillis();
-                for (int i = 0; i < THREAD_SIZE; i++) {
-                    new Thread(applicationContext.getBean(MybatisWorker.class), "thread-" + i).start();
-                }
-                Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        DruidApplication.stop = true;
-                    }
-                }));
-                countDownLatch.await();
-                stop = true;
-                System.out.println("运行总时间:" + (System.currentTimeMillis() - startTime) / 1000 + "/s");
+        return (args) -> {
+            long startTime = System.currentTimeMillis();
+            for(int i = 0; i < THREAD_SIZE; i++) {
+                new Thread(applicationContext.getBean(MybatisWorker.class), "thread-" + i).start();
             }
+            Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    DruidApplication.stop = true;
+                }
+            }));
+            countDownLatch.await();
+            stop = true;
+            System.out.println("运行总时间:" + (System.currentTimeMillis() - startTime) / 1000 + "/s");
         };
     }
 
@@ -91,7 +99,7 @@ public class DruidApplication implements ApplicationContextAware {
         @Override
         public final void run() {
             threadName = Thread.currentThread().getName();
-            while (!DruidApplication.stop && SUM_INDEX.get() < SUM_MAX) {
+            while(!DruidApplication.stop && SUM_INDEX.get() < SUM_MAX) {
                 long start = System.currentTimeMillis();
                 try {
                     process();
@@ -101,7 +109,7 @@ public class DruidApplication implements ApplicationContextAware {
                     LOGGER.error("thread name :{}, case:{}", threadName, e.getMessage(), e);
                 }
                 long currentWaitTime = System.currentTimeMillis() - start;
-                if (currentWaitTime > maxWaitTime) {
+                if(currentWaitTime > maxWaitTime) {
                     maxWaitTime = currentWaitTime;
                     maxWaitTimeRefresh++;
                 }

@@ -1,13 +1,13 @@
 spring:
   datasource:
     druid:
-      url: jdbc:mysql://10.42.0.1:3306/mysql?characterEncoding=utf-8
+      url: jdbc:mysql://10.42.0.1:3306/test?characterEncoding=utf-8
       username: root
       password: root.2019
       driver-class-name: com.mysql.jdbc.Driver
-      max-active: 120
-      min-idle: 120
-      initial-size: 120
+      max-active: 5
+      min-idle: 5
+      initial-size: 5
       max-wait: 5000
       remove-abandoned: false
       stat-view-servlet:

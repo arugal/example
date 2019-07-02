@@ -26,6 +26,7 @@
         <module>storm-example</module>
         <module>jmh-example</module>
         <module>listen-example</module>
+        <module>jdk-example</module>
     </modules>
     <packaging>pom</packaging>
     <name>Example</name>
