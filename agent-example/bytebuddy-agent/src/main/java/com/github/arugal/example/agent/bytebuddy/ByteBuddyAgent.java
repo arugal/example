@@ -23,7 +23,21 @@ public class ByteBuddyAgent {
         AgentBuilder.Transformer transformer = new AgentBuilder.Transformer() {
             @Override
             public DynamicType.Builder<?> transform(DynamicType.Builder<?> builder, TypeDescription typeDescription, ClassLoader classLoader, JavaModule javaModule) {
-                // 拦截任意方法
+
+                StringBuilder stackMessage = new StringBuilder();
+
+                printStackElement(Thread.currentThread().getStackTrace(), new AppendListener() {
+                    @Override
+                    public void append(String value) {
+                        stackMessage.append(value);
+                    }
+
+                    @Override
+                    public boolean overMaxLength() {
+                        return false;
+                    }
+                });
+                System.out.println(stackMessage.toString());
                 return builder.method(ElementMatchers.<MethodDescription>any())
                         // 委托
                         .intercept(MethodDelegation.to(TimeInterceptor.class));
@@ -43,4 +57,53 @@ public class ByteBuddyAgent {
                 .with(listener)
                 .installOn(inst);
     }
+
+    private static String convert2String(Throwable throwable, final int maxLength) {
+        final StringBuilder stackMessage = new StringBuilder();
+        Throwable causeException = throwable;
+        while(causeException != null) {
+            stackMessage.append(printExceptionInfo(causeException));
+
+            boolean overMaxLength = printStackElement(throwable.getStackTrace(), new AppendListener() {
+                public void append(String value) {
+                    stackMessage.append(value);
+                }
+
+                public boolean overMaxLength() {
+                    return stackMessage.length() > maxLength;
+                }
+            });
+
+            if(overMaxLength) {
+                break;
+            }
+
+            causeException = throwable.getCause();
+        }
+
+        return stackMessage.toString();
+    }
+
+    private static final String LINE_SEPARATOR = System.getProperty("line.separator");
+
+    private static String printExceptionInfo(Throwable causeException) {
+        return causeException.toString() + LINE_SEPARATOR;
+    }
+
+    private static boolean printStackElement(StackTraceElement[] stackTrace, AppendListener printListener) {
+        for(StackTraceElement traceElement : stackTrace) {
+            printListener.append("at " + traceElement + LINE_SEPARATOR);
+            if(printListener.overMaxLength()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private interface AppendListener {
+        void append(String value);
+
+        boolean overMaxLength();
+    }
+
 }

@@ -7,11 +7,13 @@ package com.github.arugal.example.agent;
 public class ByteBuddyMainUp {
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ClassNotFoundException, IllegalAccessException, InstantiationException {
         long start = System.currentTimeMillis();
-        new CallTimed().print();
+        Class c = Class.forName("com.github.arugal.example.agent.CallTimed");
+        CallTimed callTimed = (CallTimed) c.newInstance();
+        callTimed.print();
         long end = System.currentTimeMillis();
-        System.out.println("start:"+start+"/end:"+end);
+        System.out.println("start:" + start + "/end:" + end);
     }
 
 }
