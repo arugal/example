@@ -9,6 +9,7 @@ import org.openjdk.jmh.annotations.OutputTimeUnit;
 import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.Warmup;
+import org.openjdk.jmh.results.format.ResultFormatType;
 import org.openjdk.jmh.runner.Runner;
 import org.openjdk.jmh.runner.RunnerException;
 import org.openjdk.jmh.runner.options.Options;
@@ -23,7 +24,7 @@ import java.util.concurrent.TimeUnit;
 @BenchmarkMode(Mode.Throughput)
 @OutputTimeUnit(TimeUnit.MILLISECONDS)
 @State(Scope.Thread)
-@Fork(2)
+@Fork(1)
 @Warmup(iterations = 4)
 @Measurement(iterations = 5)
 public class StringJoinTest {
@@ -47,7 +48,11 @@ public class StringJoinTest {
     @BenchmarkMode(Mode.AverageTime)
     @OutputTimeUnit(TimeUnit.MICROSECONDS)
     public static void main(String[] args) throws RunnerException {
-        Options options = new OptionsBuilder().include(StringJoinTest.class.getSimpleName()).build();
+        Options options = new OptionsBuilder()
+                .result("result.json")
+                .resultFormat(ResultFormatType.JSON)
+                .include(StringJoinTest.class.getSimpleName())
+                .build();
         new Runner(options).run();
     }
 }

@@ -6,6 +6,7 @@ import lombok.Setter;
 import org.junit.Test;
 
 import java.util.HashMap;
+import java.util.TreeMap;
 
 /**
  * @author: zhangwei
@@ -39,6 +40,14 @@ public class HashMapTest {
         System.out.println(Integer.toBinaryString(-2));
         System.out.println(Integer.toBinaryString(-2 >> 1)+" "+(-2 >> 1));
         System.out.println(Integer.toBinaryString(-2 >>> 1)+" "+(-2 >>> 1));
+    }
+
+
+    @Test
+    public void test5(){
+        TreeMap<String, String> treeMap = new TreeMap<>();
+
+        treeMap.put("a", "b");
     }
 
 

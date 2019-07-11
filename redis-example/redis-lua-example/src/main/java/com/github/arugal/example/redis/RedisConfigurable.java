@@ -8,6 +8,7 @@ import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.script.DefaultRedisScript;
+import org.springframework.data.redis.serializer.GenericToStringSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 import org.springframework.scripting.support.ResourceScriptSource;
 
@@ -19,9 +20,9 @@ import org.springframework.scripting.support.ResourceScriptSource;
 public class RedisConfigurable extends CachingConfigurerSupport {
 
     @Bean
-    public DefaultRedisScript<String> demoRedisScript() {
-        DefaultRedisScript<String> defaultRedisScript = new DefaultRedisScript<>();
-        defaultRedisScript.setResultType(String.class);
+    public DefaultRedisScript<Long> demoRedisScript() {
+        DefaultRedisScript<Long> defaultRedisScript = new DefaultRedisScript<>();
+        defaultRedisScript.setResultType(Long.class);
         defaultRedisScript.setScriptSource(new ResourceScriptSource(new ClassPathResource("redis/demo.lua")));
         return defaultRedisScript;
     }
@@ -30,6 +31,8 @@ public class RedisConfigurable extends CachingConfigurerSupport {
     public RedisTemplate<String, Long> longRedisTemplate(RedisConnectionFactory factory){
         RedisTemplate<String, Long> redisTemplate = new RedisTemplate<>();
         redisTemplate.setConnectionFactory(factory);
+        redisTemplate.setKeySerializer(new StringRedisSerializer());
+        redisTemplate.setValueSerializer(new GenericToStringSerializer<>(Long.class));
         return redisTemplate;
     }
 

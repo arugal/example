@@ -25,12 +25,12 @@ public class RedisLuaApplication {
     private RedisTemplate<String, Long> longRedisTemplate;
 
     @Autowired
-    private DefaultRedisScript<String> demoRedisScript;
+    private DefaultRedisScript<Long> demoRedisScript;
 
     @Bean
     public ApplicationRunner runner() {
         return (args) -> {
-            String result = longRedisTemplate.execute(demoRedisScript, Collections.singletonList("key3"), 3L);
+            Long result = longRedisTemplate.execute(demoRedisScript, Collections.singletonList("key3"), 3L);
             System.out.println(result);
         };
     }

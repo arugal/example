@@ -27,6 +27,7 @@
         <module>jmh-example</module>
         <module>listen-example</module>
         <module>jdk-example</module>
+        <module>powermock-example</module>
     </modules>
     <packaging>pom</packaging>
     <name>Example</name>
@@ -40,6 +41,7 @@
         <example.version>1.0</example.version>
         <junit.version>4.12</junit.version>
         <guava.version>20.0</guava.version>
+        <jmh.version>1.21</jmh.version>
         <java.main.class>Main</java.main.class>
     </properties>
 
@@ -62,6 +64,16 @@
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
                 <version>${guava.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openjdk.jmh</groupId>
+                <artifactId>jmh-core</artifactId>
+                <version>${jmh.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openjdk.jmh</groupId>
+                <artifactId>jmh-generator-annprocess</artifactId>
+                <version>${jmh.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
