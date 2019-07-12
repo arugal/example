@@ -26,6 +26,7 @@
         <module>spring-boot-kafka</module>
         <module>spring-boot-async</module>
         <module>spring-boot-docker</module>
+        <module>aop-example1</module>
     </modules>
     <packaging>pom</packaging>
 

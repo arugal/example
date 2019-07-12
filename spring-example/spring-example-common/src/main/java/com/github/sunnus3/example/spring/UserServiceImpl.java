@@ -13,7 +13,6 @@ public class UserServiceImpl implements UserService{
         return 1;
     }
 
-
     public void print(){
         System.out.println("print-method");
     }
