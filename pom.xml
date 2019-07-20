@@ -29,6 +29,7 @@
         <module>jdk-example</module>
         <module>powermock-example</module>
         <module>zookeeper-example</module>
+        <module>fabric8-example</module>
     </modules>
     <packaging>pom</packaging>
     <name>Example</name>

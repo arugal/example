@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: yapi
+
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: yapi
+spec:
+  selector:
+    matchLabels:
+      app: yapi
+  template:
+    metadata:
+      labels:
+        app: yapi
+    spec:
+      containers:
+        - name: api
+          image: branchzero/yapi:1.7.0
+          ports:
+            - containerPort: 3000
+

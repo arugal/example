@@ -14,6 +14,7 @@ import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.Threads;
 import org.openjdk.jmh.annotations.Warmup;
 import org.openjdk.jmh.profile.GCProfiler;
+import org.openjdk.jmh.results.format.ResultFormatType;
 import org.openjdk.jmh.runner.Runner;
 import org.openjdk.jmh.runner.RunnerException;
 import org.openjdk.jmh.runner.options.Options;
@@ -64,9 +65,11 @@ public class ObjectPoolTest {
     @OutputTimeUnit(TimeUnit.SECONDS)
     public static void main(String[] args) throws RunnerException {
         Options options = new OptionsBuilder()
+            .result("ObjectPool.json")
+            .resultFormat(ResultFormatType.TEXT)
             .include(ObjectPoolTest.class.getSimpleName())
             .addProfiler(GCProfiler.class)
-            .jvmArgsAppend("-Xmx128M", "-Xms128M")
+            .jvmArgsAppend("-Xmx5M", "-Xms5M")
             .build();
         new Runner(options).run();
     }

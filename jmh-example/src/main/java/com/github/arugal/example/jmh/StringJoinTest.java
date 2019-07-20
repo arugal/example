@@ -9,6 +9,7 @@ import org.openjdk.jmh.annotations.OutputTimeUnit;
 import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.Warmup;
+import org.openjdk.jmh.profile.GCProfiler;
 import org.openjdk.jmh.results.format.ResultFormatType;
 import org.openjdk.jmh.runner.Runner;
 import org.openjdk.jmh.runner.RunnerException;
@@ -49,9 +50,9 @@ public class StringJoinTest {
     @OutputTimeUnit(TimeUnit.MICROSECONDS)
     public static void main(String[] args) throws RunnerException {
         Options options = new OptionsBuilder()
-                .result("result.json")
-                .resultFormat(ResultFormatType.JSON)
                 .include(StringJoinTest.class.getSimpleName())
+                .addProfiler(GCProfiler.class)
+                .jvmArgsAppend("-Xms10M", "-Xmx10M")
                 .build();
         new Runner(options).run();
     }
