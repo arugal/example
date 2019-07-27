@@ -11,6 +11,7 @@
 
     <artifactId>fabric8-example</artifactId>
     <packaging>pom</packaging>
+    <name>Fabric8 Example</name>
     <modules>
         <module>k8s-example</module>
     </modules>

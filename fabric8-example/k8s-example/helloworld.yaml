@@ -37,6 +37,8 @@ metadata:
   labels:
     app: nginx
 spec:
+  externalIPs:
+    - $INGRESS_VIP
   ports:
     - port: 8999
       targetPort: 80
