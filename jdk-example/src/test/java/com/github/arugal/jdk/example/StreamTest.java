@@ -2,10 +2,10 @@ package com.github.arugal.jdk.example;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Spliterator;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 import java.util.concurrent.RecursiveTask;
 import java.util.stream.Stream;
 
@@ -24,13 +24,25 @@ public class StreamTest {
     }
 
     @Test
-    public void findFirst() {
+    public void findFirstTest() {
         Integer first = Stream.of(1, 2, 3)
                 .peek(System.out::println)
                 .filter(x -> x >= 3)
                 .findFirst().get();
 
         System.out.println("first:" + first);
+    }
+
+    @Test
+    public void parallelStreamTest() {
+        List<Integer> list = new ArrayList<>();
+        for (int i = 0; i < 10000; i++) {
+            list.add(i);
+        }
+
+        list.parallelStream()
+                .filter(x -> x >= 9999)
+                .findFirst().get();
     }
 
     @Test
