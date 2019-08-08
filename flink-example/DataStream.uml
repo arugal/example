@@ -2,12 +2,881 @@
 <Diagram>
   <ID>JAVA</ID>
   <OriginalElement>org.apache.flink.streaming.api.datastream.DataStream</OriginalElement>
-  <nodes />
+  <nodes>
+    <node x="5975.370625901879" y="748.0">org.apache.flink.streaming.api.datastream.CoGroupedStreams.Where.EqualTo</node>
+    <node x="7170.962748917748" y="242.0">org.apache.flink.api.common.functions.RuntimeContext</node>
+    <node x="811.0" y="748.0">org.apache.flink.streaming.api.windowing.windows.GlobalWindow.Serializer</node>
+    <node x="3931.6173791486326" y="830.0">org.apache.flink.streaming.api.operators.StreamSource.LatencyMarksEmitter</node>
+    <node x="1385.0" y="907.0">org.apache.flink.streaming.api.transformations.StreamTransformation</node>
+    <node x="2689.0" y="1019.0">org.apache.flink.streaming.api.transformations.FeedbackTransformation</node>
+    <node x="3092.1915999278517" y="242.0">org.apache.flink.api.common.typeinfo.TypeHint</node>
+    <node x="590.0" y="1019.0">org.apache.flink.streaming.api.transformations.SourceTransformation</node>
+    <node x="5744.212748917748" y="576.0">org.apache.flink.streaming.api.datastream.CoGroupedStreams.Where</node>
+    <node x="4789.0" y="907.0">org.apache.flink.streaming.api.collector.selector.OutputSelector</node>
+    <node x="1894.0" y="1019.0">org.apache.flink.streaming.api.transformations.SplitTransformation</node>
+    <node x="2405.6915999278517" y="830.0">org.apache.flink.streaming.api.functions.ProcessFunction.OnTimerContext</node>
+    <node x="3723.0" y="989.0">org.apache.flink.streaming.runtime.partitioner.ForwardPartitioner</node>
+    <node x="4509.245625901879" y="364.0">org.apache.flink.streaming.api.functions.sink.SinkFunction</node>
+    <node x="5666.608266594518" y="748.0">org.apache.flink.streaming.api.operators.StreamGroupedFold</node>
+    <node x="151.0" y="830.0">org.apache.flink.streaming.api.windowing.windows.TimeWindow.Serializer.TimeWindowSerializerSnapshot</node>
+    <node x="6897.462748917748" y="242.0">org.apache.flink.streaming.api.datastream.ConnectedStreams</node>
+    <node x="2991.4415999278517" y="576.0">org.apache.flink.streaming.api.datastream.CoGroupedStreams.UnionKeySelector</node>
+    <node x="2991.0" y="989.0">org.apache.flink.streaming.runtime.partitioner.GlobalPartitioner</node>
+    <node x="3414.9415999278517" y="364.0">org.apache.flink.api.common.functions.FilterFunction</node>
+    <node x="4230.0" y="907.0">org.apache.flink.streaming.api.datastream.BroadcastConnectedStream</node>
+    <node x="2092.8794155844143" y="242.0">org.apache.flink.api.java.typeutils.ResultTypeQueryable</node>
+    <node x="2804.4415999278517" y="576.0">org.apache.flink.streaming.api.datastream.CoGroupedStreams.Input1Tagger</node>
+    <node x="989.0" y="576.0">org.apache.flink.streaming.api.datastream.JoinedStreams.WithWindow</node>
+    <node x="5052.657945526698" y="576.0">org.apache.flink.streaming.api.operators.OneInputStreamOperator</node>
+    <node x="4550.0" y="907.0">org.apache.flink.streaming.api.datastream.BroadcastStream</node>
+    <node x="4452.565413059166" y="576.0">org.apache.flink.streaming.api.operators.AbstractUdfStreamOperator</node>
+    <node x="6261.212748917748" y="364.0">org.apache.flink.streaming.api.datastream.SplitStream</node>
+    <node x="6338.212748917748" y="576.0">org.apache.flink.streaming.api.functions.sink.SinkFunction.Context</node>
+    <node x="829.0" y="364.0">org.apache.flink.streaming.api.windowing.windows.Window</node>
+    <node x="2617.4415999278517" y="576.0">org.apache.flink.streaming.api.datastream.CoGroupedStreams.Input2Tagger</node>
+    <node x="2144.4415999278517" y="748.0">org.apache.flink.streaming.api.functions.sink.OutputFormatSinkFunction</node>
+    <node x="1288.083333333334" y="364.0">org.apache.flink.api.common.functions.Partitioner</node>
+    <node x="3477.5" y="907.0">org.apache.flink.streaming.runtime.partitioner.StreamPartitioner</node>
+    <node x="232.0" y="576.0">org.apache.flink.streaming.api.windowing.windows.TimeWindow</node>
+    <node x="5416.608266594518" y="748.0">org.apache.flink.streaming.api.operators.StreamGroupedReduce</node>
+    <node x="4238.037337662338" y="748.0">org.apache.flink.streaming.api.operators.ProcessOperator</node>
+    <node x="2403.4415999278517" y="576.0">org.apache.flink.streaming.api.functions.ProcessFunction</node>
+    <node x="0.0" y="1019.0">org.apache.flink.streaming.api.transformations.CoFeedbackTransformation</node>
+    <node x="5332.324612193364" y="242.0">org.apache.flink.streaming.api.datastream.DataStreamSink</node>
+    <node x="5621.120625901879" y="830.0">org.apache.flink.streaming.api.operators.StreamSink.SimpleContext</node>
+    <node x="5191.657945526698" y="364.0">org.apache.flink.streaming.api.operators.TwoInputStreamOperator</node>
+    <node x="3191.9415999278517" y="364.0">org.apache.flink.streaming.api.datastream.CoGroupedStreams</node>
+    <node x="7121.462748917748" y="364.0">org.apache.flink.api.common.functions.util.AbstractRuntimeUDFContext</node>
+    <node x="1595.050429292929" y="576.0">org.apache.flink.streaming.api.datastream.JoinedStreams.FlatJoinCoGroupFunction</node>
+    <node x="3874.4415999278517" y="576.0">org.apache.flink.streaming.api.datastream.CoGroupedStreams.UnionSerializerConfigSnapshot</node>
+    <node x="6667.212748917748" y="364.0">org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator</node>
+    <node x="543.0" y="748.0">org.apache.flink.streaming.api.windowing.assigners.WindowAssigner.WindowAssignerContext</node>
+    <node x="1376.0" y="1019.0">org.apache.flink.streaming.api.transformations.OneInputTransformation</node>
+    <node x="4747.407945526698" y="364.0">org.apache.flink.streaming.api.operators.AbstractStreamOperator</node>
+    <node x="1912.4415999278515" y="576.0">org.apache.flink.streaming.api.datastream.CoGroupedStreams.CoGroupWindowFunction</node>
+    <node x="5127.324612193364" y="242.0">org.apache.flink.streaming.api.operators.StreamOperator</node>
+    <node x="295.0" y="1019.0">org.apache.flink.streaming.api.transformations.SideOutputTransformation</node>
+    <node x="4216.537337662338" y="830.0">org.apache.flink.streaming.api.operators.ProcessOperator.ContextImpl</node>
+    <node x="3392.4415999278517" y="576.0">org.apache.flink.streaming.api.datastream.CoGroupedStreams.UnionTypeInfo</node>
+    <node x="6856.962748917748" y="748.0">org.apache.flink.streaming.api.datastream.IterativeStream.ConnectedIterativeStreams</node>
+    <node x="232.0" y="748.0">org.apache.flink.streaming.api.windowing.windows.TimeWindow.Serializer</node>
+    <node x="1060.583333333334" y="364.0">org.apache.flink.streaming.api.datastream.JoinedStreams</node>
+    <node x="5868.212748917748" y="576.0">org.apache.flink.streaming.api.datastream.KeyedStream.IntervalJoin</node>
+    <node x="3964.0" y="989.0">org.apache.flink.streaming.runtime.partitioner.ShufflePartitioner</node>
+    <node x="1341.583333333334" y="576.0">org.apache.flink.streaming.api.datastream.JoinedStreams.JoinCoGroupFunction</node>
+    <node x="2361.712748917748" y="242.0">org.apache.flink.api.common.functions.Function</node>
+    <node x="2968.4627489177483" y="0.0">org.apache.flink.annotation.Public</node>
+    <node x="6440.212748917748" y="242.0">org.apache.flink.api.common.io.OutputFormat</node>
+    <node x="802.0" y="576.0">org.apache.flink.streaming.api.windowing.windows.GlobalWindow</node>
+    <node x="1172.583333333334" y="576.0">org.apache.flink.streaming.api.datastream.CoGroupedStreams.WithWindow</node>
+    <node x="401.0" y="748.0">org.apache.flink.streaming.api.datastream.JoinedStreams.Where.EqualTo</node>
+    <node x="2403.0" y="1019.0">org.apache.flink.streaming.api.transformations.PartitionTransformation</node>
+    <node x="2908.5621843434374" y="364.0">org.apache.flink.api.java.functions.KeySelector</node>
+    <node x="849.0" y="1019.0">org.apache.flink.streaming.api.transformations.TwoInputTransformation</node>
+    <node x="1126.0" y="1019.0">org.apache.flink.streaming.api.transformations.UnionTransformation</node>
+    <node x="5220.608266594518" y="748.0">org.apache.flink.streaming.api.operators.StreamFlatMap</node>
+    <node x="5970.712748917748" y="364.0">org.apache.flink.streaming.api.datastream.KeyedStream</node>
+    <node x="5019.0" y="907.0">org.apache.flink.streaming.api.scala.OutputTag</node>
+    <node x="2180.4415999278517" y="576.0">org.apache.flink.streaming.api.functions.sink.RichSinkFunction</node>
+    <node x="3214.4415999278517" y="576.0">org.apache.flink.streaming.api.datastream.CoGroupedStreams.TaggedUnion</node>
+    <node x="6789.962748917748" y="576.0">org.apache.flink.streaming.api.datastream.IterativeStream</node>
+    <node x="4214.441599927852" y="576.0">org.apache.flink.streaming.api.datastream.CoGroupedStreams.UnionSerializer</node>
+    <node x="6566.962748917748" y="576.0">org.apache.flink.streaming.api.datastream.DataStreamSource</node>
+    <node x="440.5" y="576.0">org.apache.flink.streaming.api.datastream.JoinedStreams.Where</node>
+    <node x="2644.8495039682557" y="748.0">org.apache.flink.streaming.api.functions.ProcessFunction.Context</node>
+    <node x="3588.4415999278517" y="576.0">org.apache.flink.streaming.api.datastream.CoGroupedStreams.UnionSerializerSnapshot</node>
+    <node x="574.5" y="576.0">org.apache.flink.streaming.api.windowing.assigners.WindowAssigner</node>
+    <node x="2144.0" y="1019.0">org.apache.flink.streaming.api.transformations.SelectTransformation</node>
+    <node x="4452.037337662338" y="748.0">org.apache.flink.streaming.api.operators.StreamMap</node>
+    <node x="4847.657945526698" y="576.0">org.apache.flink.streaming.api.operators.AbstractStreamOperator.CountingOutput</node>
+    <node x="4791.129415584415" y="748.0">org.apache.flink.streaming.api.operators.StreamSink</node>
+    <node x="721.0" y="830.0">org.apache.flink.streaming.api.windowing.windows.GlobalWindow.Serializer.GlobalWindowSerializerSnapshot</node>
+    <node x="3464.0" y="989.0">org.apache.flink.streaming.runtime.partitioner.RebalancePartitioner</node>
+    <node x="1653.0" y="1019.0">org.apache.flink.streaming.api.transformations.SinkTransformation</node>
+    <node x="0.0" y="576.0">org.apache.flink.streaming.api.datastream.AllWindowedStream</node>
+    <node x="3223.0" y="989.0">org.apache.flink.streaming.runtime.partitioner.RescalePartitioner</node>
+    <node x="6265.712748917748" y="242.0">org.apache.flink.streaming.api.datastream.DataStream</node>
+    <node x="7130.462748917748" y="576.0">org.apache.flink.streaming.api.operators.StreamingRuntimeContext</node>
+    <node x="3963.1173791486326" y="748.0">org.apache.flink.streaming.api.operators.StreamSource</node>
+    <node x="6055.212748917748" y="576.0">org.apache.flink.streaming.api.datastream.KeyedStream.IntervalJoined</node>
+    <node x="2031.0121843434372" y="364.0">org.apache.flink.api.common.functions.AbstractRichFunction</node>
+  </nodes>
   <notes />
-  <edges />
-  <settings layout="Hierarchic Group" zoom="1.0" x="642.5" y="431.5" />
-  <SelectedNodes />
-  <Categories />
+  <edges>
+    <edge source="org.apache.flink.streaming.api.datastream.JoinedStreams.Where" target="org.apache.flink.streaming.api.datastream.JoinedStreams">
+      <point x="26.0" y="-16.0" />
+      <point x="518.5" y="556.0" />
+      <point x="1082.583333333334" y="556.0" />
+      <point x="-66.0" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.functions.sink.SinkFunction.Context" target="org.apache.flink.streaming.api.functions.sink.SinkFunction">
+      <point x="-30.5" y="-16.0" />
+      <point x="6368.712748917748" y="496.0" />
+      <point x="4634.495625901879" y="496.0" />
+      <point x="41.75" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.functions.ProcessFunction.OnTimerContext" target="org.apache.flink.streaming.api.functions.ProcessFunction.Context">
+      <point x="46.25" y="-16.0" />
+      <point x="2544.4415999278517" y="805.0" />
+      <point x="2675.3495039682557" y="805.0" />
+      <point x="-30.5" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.operators.StreamGroupedReduce" target="org.apache.flink.streaming.api.operators.OneInputStreamOperator">
+      <point x="57.5" y="-16.0" />
+      <point x="5589.108266594518" y="658.0" />
+      <point x="5245.407945526698" y="658.0" />
+      <point x="64.25" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.operators.StreamSink.SimpleContext" target="org.apache.flink.streaming.api.functions.sink.SinkFunction.Context">
+      <point x="43.99999999999977" y="-16.0" />
+      <point x="5753.120625901879" y="805.0" />
+      <point x="6399.212748917748" y="805.0" />
+      <point x="0.0" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.functions.sink.RichSinkFunction" target="org.apache.flink.api.common.functions.AbstractRichFunction">
+      <point x="0.0" y="-16.0" />
+      <point x="2281.9415999278517" y="426.0" />
+      <point x="2198.3121843434374" y="426.0" />
+      <point x="47.80000000000018" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.datastream.CoGroupedStreams.TaggedUnion" target="org.apache.flink.streaming.api.datastream.CoGroupedStreams">
+      <point x="0.0" y="-16.0" />
+      <point x="0.0" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.operators.StreamGroupedReduce" target="org.apache.flink.streaming.api.operators.AbstractUdfStreamOperator">
+      <point x="-57.5" y="-16.0" />
+      <point x="5474.108266594518" y="668.0" />
+      <point x="4675.7082702020225" y="668.0" />
+      <point x="81.14285714285688" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.datastream.CoGroupedStreams.Input2Tagger" target="org.apache.flink.streaming.api.datastream.CoGroupedStreams">
+      <point x="41.75" y="-16.0" />
+      <point x="2742.6915999278517" y="526.0" />
+      <point x="3238.0779635642148" y="526.0" />
+      <point x="-55.36363636363649" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.windowing.windows.TimeWindow.Serializer" target="org.apache.flink.streaming.api.windowing.windows.TimeWindow">
+      <point x="0.0" y="-16.0" />
+      <point x="0.0" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.datastream.CoGroupedStreams.WithWindow" target="org.apache.flink.streaming.api.windowing.windows.Window">
+      <point x="-49.66666666666674" y="-16.0" />
+      <point x="1197.416666666667" y="536.0" />
+      <point x="917.7857142857142" y="536.0" />
+      <point x="32.28571428571422" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.transformations.PartitionTransformation" target="org.apache.flink.streaming.api.transformations.StreamTransformation">
+      <point x="0.0" y="-16.0" />
+      <point x="2536.0" y="969.0" />
+      <point x="1591.409090909091" y="969.0" />
+      <point x="86.90909090909099" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.datastream.CoGroupedStreams.Where.EqualTo" target="org.apache.flink.streaming.api.datastream.CoGroupedStreams.Where">
+      <point x="-30.5" y="-16.0" />
+      <point x="6005.870625901879" y="628.0" />
+      <point x="5796.212748917748" y="628.0" />
+      <point x="0.0" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.api.common.functions.AbstractRichFunction" target="org.apache.flink.api.common.functions.Function">
+      <point x="59.75" y="-16.0" />
+      <point x="2210.262184343437" y="334.0" />
+      <point x="2403.394567099566" y="334.0" />
+      <point x="-23.818181818181984" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.windowing.windows.TimeWindow.Serializer.TimeWindowSerializerSnapshot" target="org.apache.flink.streaming.api.windowing.windows.TimeWindow.Serializer">
+      <point x="0.0" y="-16.0" />
+      <point x="0.0" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.windowing.windows.GlobalWindow.Serializer.GlobalWindowSerializerSnapshot" target="org.apache.flink.streaming.api.windowing.windows.GlobalWindow.Serializer">
+      <point x="0.0" y="-16.0" />
+      <point x="0.0" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.datastream.CoGroupedStreams" target="org.apache.flink.annotation.Public">
+      <point x="0.0" y="-16.0" />
+      <point x="3293.4415999278517" y="192.0" />
+      <point x="3022.9448917748905" y="192.0" />
+      <point x="-2.0178571428573377" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.datastream.JoinedStreams.Where" target="org.apache.flink.annotation.Public">
+      <point x="-26.0" y="-16.0" />
+      <point x="466.5" y="142.0" />
+      <point x="2978.5520346320336" y="142.0" />
+      <point x="-46.41071428571422" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.runtime.partitioner.ForwardPartitioner" target="org.apache.flink.streaming.runtime.partitioner.StreamPartitioner">
+      <point x="0.0" y="-16.0" />
+      <point x="3833.5" y="969.0" />
+      <point x="3625.9" y="969.0" />
+      <point x="42.40000000000009" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.functions.ProcessFunction.OnTimerContext" target="org.apache.flink.streaming.api.functions.ProcessFunction">
+      <point x="-46.25" y="-16.0" />
+      <point x="2451.9415999278517" y="805.0" />
+      <point x="2461.2245039682557" y="805.0" />
+      <point x="2461.2245039682557" y="728.0" />
+      <point x="2451.9415999278517" y="728.0" />
+      <point x="-48.5" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.transformations.OneInputTransformation" target="org.apache.flink.streaming.api.transformations.StreamTransformation">
+      <point x="0.0" y="-16.0" />
+      <point x="0.0" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.datastream.KeyedStream" target="org.apache.flink.annotation.Public">
+      <point x="-39.5" y="-16.0" />
+      <point x="6010.212748917748" y="142.0" />
+      <point x="3043.123463203462" y="142.0" />
+      <point x="18.16071428571422" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.transformations.SinkTransformation" target="org.apache.flink.streaming.api.transformations.StreamTransformation">
+      <point x="0.0" y="-16.0" />
+      <point x="1763.5" y="999.0" />
+      <point x="1526.2272727272727" y="999.0" />
+      <point x="21.727272727272748" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.windowing.windows.GlobalWindow.Serializer" target="org.apache.flink.streaming.api.windowing.windows.GlobalWindow">
+      <point x="0.0" y="-16.0" />
+      <point x="0.0" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.api.common.io.OutputFormat" target="org.apache.flink.annotation.Public">
+      <point x="0.0" y="-16.0" />
+      <point x="6523.712748917748" y="102.0" />
+      <point x="3059.26632034632" y="102.0" />
+      <point x="34.30357142857156" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.datastream.CoGroupedStreams.UnionSerializerConfigSnapshot" target="org.apache.flink.streaming.api.datastream.CoGroupedStreams">
+      <point x="-4.547473508864641E-13" y="-16.0" />
+      <point x="4034.441599927851" y="526.0" />
+      <point x="3348.8052362914877" y="526.0" />
+      <point x="55.36363636363649" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.operators.StreamGroupedFold" target="org.apache.flink.streaming.api.operators.AbstractUdfStreamOperator">
+      <point x="-53.0" y="-16.0" />
+      <point x="5719.608266594518" y="648.0" />
+      <point x="4716.279698773452" y="648.0" />
+      <point x="121.71428571428623" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.functions.sink.SinkFunction" target="org.apache.flink.annotation.Public">
+      <point x="41.75" y="-16.0" />
+      <point x="4634.495625901879" y="172.0" />
+      <point x="3031.01632034632" y="172.0" />
+      <point x="6.0535714285715585" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.transformations.FeedbackTransformation" target="org.apache.flink.streaming.api.transformations.StreamTransformation">
+      <point x="0.0" y="-16.0" />
+      <point x="2817.5" y="959.0" />
+      <point x="1613.1363636363635" y="959.0" />
+      <point x="108.63636363636351" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.functions.sink.SinkFunction" target="org.apache.flink.api.common.functions.Function">
+      <point x="-41.75" y="-16.0" />
+      <point x="4550.995625901879" y="294.0" />
+      <point x="2486.7582034632023" y="294.0" />
+      <point x="59.545454545454504" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.datastream.CoGroupedStreams.Where" target="org.apache.flink.streaming.api.datastream.CoGroupedStreams">
+      <point x="-26.0" y="-16.0" />
+      <point x="5770.212748917748" y="506.0" />
+      <point x="3385.7143272005787" y="506.0" />
+      <point x="92.27272727272702" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.transformations.CoFeedbackTransformation" target="org.apache.flink.streaming.api.transformations.StreamTransformation">
+      <point x="0.0" y="-16.0" />
+      <point x="137.5" y="959.0" />
+      <point x="1395.8636363636365" y="959.0" />
+      <point x="-108.63636363636351" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.transformations.SideOutputTransformation" target="org.apache.flink.streaming.api.transformations.StreamTransformation">
+      <point x="0.0" y="-16.0" />
+      <point x="432.5" y="969.0" />
+      <point x="1417.590909090909" y="969.0" />
+      <point x="-86.90909090909099" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.operators.StreamSink" target="org.apache.flink.streaming.api.operators.OneInputStreamOperator">
+      <point x="37.25" y="-16.0" />
+      <point x="4902.879415584415" y="728.0" />
+      <point x="5159.741278860031" y="728.0" />
+      <point x="-21.41666666666697" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.api.java.typeutils.ResultTypeQueryable" target="org.apache.flink.annotation.Public">
+      <point x="0.0" y="-16.0" />
+      <point x="2207.8794155844143" y="212.0" />
+      <point x="3006.8020346320336" y="212.0" />
+      <point x="-18.16071428571422" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.transformations.SourceTransformation" target="org.apache.flink.streaming.api.transformations.StreamTransformation">
+      <point x="0.0" y="-16.0" />
+      <point x="709.5" y="979.0" />
+      <point x="1439.3181818181818" y="979.0" />
+      <point x="-65.18181818181824" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.api.common.functions.RuntimeContext" target="org.apache.flink.annotation.Public">
+      <point x="0.0" y="-16.0" />
+      <point x="7263.462748917748" y="52.0" />
+      <point x="3079.4448917748914" y="52.0" />
+      <point x="54.48214285714312" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.datastream.JoinedStreams.WithWindow" target="org.apache.flink.annotation.Public">
+      <point x="0.0" y="-16.0" />
+      <point x="1063.5" y="546.0" />
+      <point x="1050.083333333334" y="546.0" />
+      <point x="1050.083333333334" y="152.0" />
+      <point x="2982.5877489177483" y="152.0" />
+      <point x="-42.375" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.datastream.CoGroupedStreams.Input1Tagger" target="org.apache.flink.api.common.functions.Function">
+      <point x="-41.75" y="-16.0" />
+      <point x="2846.1915999278517" y="496.0" />
+      <point x="2791.5621843434374" y="496.0" />
+      <point x="2791.5621843434374" y="334.0" />
+      <point x="2439.121839826839" y="334.0" />
+      <point x="11.909090909090992" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.operators.ProcessOperator" target="org.apache.flink.streaming.api.operators.OneInputStreamOperator">
+      <point x="48.5" y="-16.0" />
+      <point x="4383.537337662338" y="708.0" />
+      <point x="5074.074612193365" y="708.0" />
+      <point x="-107.08333333333303" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.functions.sink.RichSinkFunction" target="org.apache.flink.streaming.api.functions.sink.SinkFunction">
+      <point x="67.66666666666652" y="-16.0" />
+      <point x="2349.6082665945178" y="556.0" />
+      <point x="4550.995625901879" y="556.0" />
+      <point x="-41.75" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.datastream.CoGroupedStreams.UnionSerializerSnapshot" target="org.apache.flink.streaming.api.datastream.CoGroupedStreams">
+      <point x="0.0" y="-16.0" />
+      <point x="3721.4415999278517" y="536.0" />
+      <point x="3330.3506908369427" y="536.0" />
+      <point x="36.90909090909099" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.operators.StreamSource.LatencyMarksEmitter" target="org.apache.flink.streaming.api.operators.StreamSource">
+      <point x="0.0" y="-16.0" />
+      <point x="0.0" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.operators.ProcessOperator.ContextImpl" target="org.apache.flink.streaming.api.operators.ProcessOperator">
+      <point x="39.5" y="-16.0" />
+      <point x="0.0" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.datastream.IterativeStream.ConnectedIterativeStreams" target="org.apache.flink.streaming.api.datastream.ConnectedStreams">
+      <point x="0.0" y="-16.0" />
+      <point x="0.0" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.api.common.functions.Partitioner" target="org.apache.flink.annotation.Public">
+      <point x="-39.5" y="-16.0" />
+      <point x="1327.583333333334" y="182.0" />
+      <point x="2994.6948917748905" y="182.0" />
+      <point x="-30.267857142857338" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.datastream.CoGroupedStreams.WithWindow" target="org.apache.flink.annotation.Public">
+      <point x="0.0" y="-16.0" />
+      <point x="1247.083333333334" y="172.0" />
+      <point x="2990.6591774891767" y="172.0" />
+      <point x="-34.30357142857156" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.datastream.JoinedStreams.JoinCoGroupFunction" target="org.apache.flink.streaming.api.datastream.JoinedStreams">
+      <point x="-76.66666666666674" y="-16.0" />
+      <point x="1379.916666666667" y="496.0" />
+      <point x="1170.583333333334" y="496.0" />
+      <point x="22.0" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.transformations.UnionTransformation" target="org.apache.flink.streaming.api.transformations.StreamTransformation">
+      <point x="0.0" y="-16.0" />
+      <point x="1241.0" y="999.0" />
+      <point x="1482.7727272727273" y="999.0" />
+      <point x="-21.727272727272748" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.operators.StreamSource" target="org.apache.flink.streaming.api.operators.AbstractUdfStreamOperator">
+      <point x="0.0" y="-16.0" />
+      <point x="4046.6173791486326" y="678.0" />
+      <point x="4472.85112734488" y="678.0" />
+      <point x="-121.71428571428532" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.datastream.CoGroupedStreams.CoGroupWindowFunction" target="org.apache.flink.streaming.api.datastream.CoGroupedStreams">
+      <point x="93.0" y="-16.0" />
+      <point x="2129.4415999278517" y="516.0" />
+      <point x="3219.6234181096697" y="516.0" />
+      <point x="-73.81818181818198" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.operators.TwoInputStreamOperator" target="org.apache.flink.streaming.api.operators.StreamOperator">
+      <point x="0.0" y="-16.0" />
+      <point x="5320.157945526698" y="344.0" />
+      <point x="5281.491278860031" y="344.0" />
+      <point x="61.66666666666697" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.datastream.AllWindowedStream" target="org.apache.flink.annotation.Public">
+      <point x="-53.0" y="-16.0" />
+      <point x="53.0" y="122.0" />
+      <point x="2970.480606060605" y="122.0" />
+      <point x="-54.48214285714266" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.operators.StreamSink" target="org.apache.flink.streaming.api.operators.AbstractUdfStreamOperator">
+      <point x="-37.25" y="-16.0" />
+      <point x="4828.379415584415" y="698.0" />
+      <point x="4594.565413059166" y="698.0" />
+      <point x="0.0" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.datastream.CoGroupedStreams.WithWindow" target="org.apache.flink.streaming.api.datastream.CoGroupedStreams">
+      <point x="49.66666666666674" y="-16.0" />
+      <point x="1296.750000000001" y="506.0" />
+      <point x="3201.168872655124" y="506.0" />
+      <point x="-92.27272727272748" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.datastream.JoinedStreams.WithWindow" target="org.apache.flink.streaming.api.datastream.JoinedStreams">
+      <point x="49.66666666666674" y="-16.0" />
+      <point x="1113.166666666667" y="556.0" />
+      <point x="1126.583333333334" y="556.0" />
+      <point x="-22.0" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.datastream.JoinedStreams.FlatJoinCoGroupFunction" target="org.apache.flink.streaming.api.datastream.JoinedStreams">
+      <point x="-88.66666666666674" y="-16.0" />
+      <point x="1639.383762626262" y="456.0" />
+      <point x="1214.583333333334" y="456.0" />
+      <point x="66.0" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.datastream.CoGroupedStreams.CoGroupWindowFunction" target="org.apache.flink.streaming.api.windowing.windows.Window">
+      <point x="-93.0" y="-16.0" />
+      <point x="1943.4415999278515" y="446.0" />
+      <point x="933.9285714285716" y="446.0" />
+      <point x="48.428571428571445" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.datastream.KeyedStream" target="org.apache.flink.streaming.api.datastream.DataStream">
+      <point x="39.5" y="-16.0" />
+      <point x="6089.212748917748" y="344.0" />
+      <point x="6290.546082251081" y="344.0" />
+      <point x="-49.66666666666697" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.datastream.KeyedStream.IntervalJoin" target="org.apache.flink.streaming.api.datastream.KeyedStream">
+      <point x="0.0" y="-16.0" />
+      <point x="5951.712748917748" y="556.0" />
+      <point x="6010.212748917748" y="556.0" />
+      <point x="-39.5" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.functions.sink.OutputFormatSinkFunction" target="org.apache.flink.streaming.api.functions.sink.RichSinkFunction">
+      <point x="0.0" y="-16.0" />
+      <point x="0.0" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.runtime.partitioner.RebalancePartitioner" target="org.apache.flink.streaming.runtime.partitioner.StreamPartitioner">
+      <point x="0.0" y="-16.0" />
+      <point x="0.0" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.api.common.typeinfo.TypeHint" target="org.apache.flink.annotation.Public">
+      <point x="0.0" y="-16.0" />
+      <point x="3157.6915999278517" y="202.0" />
+      <point x="3018.9091774891767" y="202.0" />
+      <point x="-6.0535714285715585" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.datastream.JoinedStreams.FlatJoinCoGroupFunction" target="org.apache.flink.api.common.functions.AbstractRichFunction">
+      <point x="88.66666666666674" y="-16.0" />
+      <point x="1816.7170959595958" y="476.0" />
+      <point x="2102.712184343437" y="476.0" />
+      <point x="-47.80000000000018" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.operators.StreamFlatMap" target="org.apache.flink.streaming.api.operators.OneInputStreamOperator">
+      <point x="44.0" y="-16.0" />
+      <point x="5352.608266594518" y="678.0" />
+      <point x="5202.574612193365" y="678.0" />
+      <point x="21.41666666666697" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.api.java.functions.KeySelector" target="org.apache.flink.api.common.functions.Function">
+      <point x="-39.5" y="-16.0" />
+      <point x="2948.0621843434374" y="324.0" />
+      <point x="2451.03093073593" y="324.0" />
+      <point x="23.818181818181984" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.operators.StreamingRuntimeContext" target="org.apache.flink.api.common.functions.util.AbstractRuntimeUDFContext">
+      <point x="0.0" y="-16.0" />
+      <point x="0.0" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.datastream.JoinedStreams.Where.EqualTo" target="org.apache.flink.streaming.api.datastream.JoinedStreams.Where">
+      <point x="30.5" y="-16.0" />
+      <point x="0.0" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.api.common.functions.FilterFunction" target="org.apache.flink.annotation.Public">
+      <point x="46.25" y="-16.0" />
+      <point x="3553.6915999278517" y="182.0" />
+      <point x="3026.980606060605" y="182.0" />
+      <point x="2.0178571428573377" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.datastream.DataStream" target="org.apache.flink.annotation.Public">
+      <point x="0.0" y="-16.0" />
+      <point x="6340.212748917748" y="122.0" />
+      <point x="3051.1948917748905" y="122.0" />
+      <point x="26.232142857142662" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.operators.AbstractUdfStreamOperator" target="org.apache.flink.api.common.functions.Function">
+      <point x="-71.0" y="-16.0" />
+      <point x="4523.565413059166" y="546.0" />
+      <point x="4472.403093434346" y="546.0" />
+      <point x="4472.403093434346" y="304.0" />
+      <point x="2474.8491125541113" y="304.0" />
+      <point x="47.63636363636351" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.datastream.CoGroupedStreams.UnionTypeInfo" target="org.apache.flink.streaming.api.datastream.CoGroupedStreams">
+      <point x="0.0" y="-16.0" />
+      <point x="3480.4415999278517" y="546.0" />
+      <point x="3311.8961453823968" y="546.0" />
+      <point x="18.454545454545496" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.datastream.CoGroupedStreams.Where.EqualTo" target="org.apache.flink.annotation.Public">
+      <point x="30.5" y="-16.0" />
+      <point x="6066.870625901879" y="728.0" />
+      <point x="6250.712748917748" y="728.0" />
+      <point x="6250.712748917748" y="132.0" />
+      <point x="3047.1591774891767" y="132.0" />
+      <point x="22.19642857142844" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.datastream.CoGroupedStreams.CoGroupWindowFunction" target="org.apache.flink.api.common.functions.Function">
+      <point x="31.0" y="-16.0" />
+      <point x="2067.4415999278517" y="496.0" />
+      <point x="2334.7544155844143" y="496.0" />
+      <point x="2334.7544155844143" y="344.0" />
+      <point x="2415.303658008657" y="344.0" />
+      <point x="-11.909090909090992" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.runtime.partitioner.ShufflePartitioner" target="org.apache.flink.streaming.runtime.partitioner.StreamPartitioner">
+      <point x="0.0" y="-16.0" />
+      <point x="4074.5" y="959.0" />
+      <point x="3668.3" y="959.0" />
+      <point x="84.80000000000018" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.functions.sink.SinkFunction.Context" target="org.apache.flink.annotation.Public">
+      <point x="30.5" y="-16.0" />
+      <point x="6429.712748917748" y="112.0" />
+      <point x="3055.230606060605" y="112.0" />
+      <point x="30.267857142857338" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.functions.ProcessFunction" target="org.apache.flink.api.common.functions.AbstractRichFunction">
+      <point x="0.0" y="-16.0" />
+      <point x="2500.4415999278517" y="416.0" />
+      <point x="2246.112184343437" y="416.0" />
+      <point x="95.59999999999991" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.api.java.functions.KeySelector" target="org.apache.flink.annotation.Public">
+      <point x="39.5" y="-16.0" />
+      <point x="3027.0621843434374" y="344.0" />
+      <point x="3081.6915999278517" y="344.0" />
+      <point x="3081.6915999278517" y="212.0" />
+      <point x="3014.873463203462" y="212.0" />
+      <point x="-10.08928571428578" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.api.common.functions.Function" target="org.apache.flink.annotation.Public">
+      <point x="0.0" y="-16.0" />
+      <point x="2427.212748917748" y="222.0" />
+      <point x="3010.8377489177483" y="222.0" />
+      <point x="-14.125" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.runtime.partitioner.GlobalPartitioner" target="org.apache.flink.streaming.runtime.partitioner.StreamPartitioner">
+      <point x="0.0" y="-16.0" />
+      <point x="3097.0" y="959.0" />
+      <point x="3498.7" y="959.0" />
+      <point x="-84.80000000000018" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.api.common.functions.FilterFunction" target="org.apache.flink.api.common.functions.Function">
+      <point x="-46.25" y="-16.0" />
+      <point x="3461.1915999278517" y="314.0" />
+      <point x="2462.9400216450204" y="314.0" />
+      <point x="35.72727272727252" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.datastream.JoinedStreams.JoinCoGroupFunction" target="org.apache.flink.api.common.functions.AbstractRichFunction">
+      <point x="76.66666666666674" y="-16.0" />
+      <point x="1533.250000000001" y="466.0" />
+      <point x="2054.9121843434373" y="466.0" />
+      <point x="-95.59999999999991" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.datastream.IterativeStream" target="org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator">
+      <point x="0.0" y="-16.0" />
+      <point x="73.25" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.datastream.DataStreamSource" target="org.apache.flink.annotation.Public">
+      <point x="-50.75" y="-16.0" />
+      <point x="6617.712748917748" y="92.0" />
+      <point x="3063.3020346320336" y="92.0" />
+      <point x="38.33928571428578" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.api.common.functions.Partitioner" target="org.apache.flink.api.common.functions.Function">
+      <point x="39.5" y="-16.0" />
+      <point x="1406.583333333334" y="304.0" />
+      <point x="2367.6672943722933" y="304.0" />
+      <point x="-59.545454545454504" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.operators.StreamMap" target="org.apache.flink.streaming.api.operators.AbstractUdfStreamOperator">
+      <point x="-35.0" y="-16.0" />
+      <point x="4487.037337662338" y="698.0" />
+      <point x="4553.993984487737" y="698.0" />
+      <point x="-40.57142857142844" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.operators.StreamFlatMap" target="org.apache.flink.streaming.api.operators.AbstractUdfStreamOperator">
+      <point x="-44.0" y="-16.0" />
+      <point x="5264.608266594518" y="688.0" />
+      <point x="4635.136841630594" y="688.0" />
+      <point x="40.57142857142844" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.windowing.assigners.WindowAssigner.WindowAssignerContext" target="org.apache.flink.streaming.api.windowing.assigners.WindowAssigner">
+      <point x="0.0" y="-16.0" />
+      <point x="0.0" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.datastream.CoGroupedStreams.UnionKeySelector" target="org.apache.flink.api.java.functions.KeySelector">
+      <point x="-50.75" y="-16.0" />
+      <point x="3042.1915999278517" y="496.0" />
+      <point x="2987.5621843434374" y="496.0" />
+      <point x="0.0" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.datastream.CoGroupedStreams.UnionSerializer" target="org.apache.flink.streaming.api.datastream.CoGroupedStreams">
+      <point x="0.0" y="-16.0" />
+      <point x="4311.441599927852" y="516.0" />
+      <point x="3367.259781746033" y="516.0" />
+      <point x="73.81818181818153" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.datastream.ConnectedStreams" target="org.apache.flink.annotation.Public">
+      <point x="0.0" y="-16.0" />
+      <point x="6998.962748917748" y="72.0" />
+      <point x="3071.373463203462" y="72.0" />
+      <point x="46.41071428571422" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.datastream.AllWindowedStream" target="org.apache.flink.streaming.api.windowing.windows.Window">
+      <point x="53.0" y="-16.0" />
+      <point x="159.0" y="526.0" />
+      <point x="837.0714285714284" y="526.0" />
+      <point x="-48.428571428571445" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.api.common.functions.util.AbstractRuntimeUDFContext" target="org.apache.flink.api.common.functions.RuntimeContext">
+      <point x="0.0" y="-16.0" />
+      <point x="0.0" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.runtime.partitioner.RescalePartitioner" target="org.apache.flink.streaming.runtime.partitioner.StreamPartitioner">
+      <point x="0.0" y="-16.0" />
+      <point x="3333.5" y="969.0" />
+      <point x="3541.1" y="969.0" />
+      <point x="-42.40000000000009" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.windowing.assigners.WindowAssigner" target="org.apache.flink.streaming.api.windowing.windows.Window">
+      <point x="0.0" y="-16.0" />
+      <point x="667.0" y="546.0" />
+      <point x="869.3571428571431" y="546.0" />
+      <point x="-16.14285714285711" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.operators.AbstractStreamOperator" target="org.apache.flink.streaming.api.operators.StreamOperator">
+      <point x="0.0" y="-16.0" />
+      <point x="4875.907945526698" y="344.0" />
+      <point x="5158.157945526697" y="344.0" />
+      <point x="-61.66666666666697" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.transformations.SelectTransformation" target="org.apache.flink.streaming.api.transformations.StreamTransformation">
+      <point x="0.0" y="-16.0" />
+      <point x="2263.5" y="979.0" />
+      <point x="1569.6818181818182" y="979.0" />
+      <point x="65.18181818181824" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.datastream.CoGroupedStreams.Input2Tagger" target="org.apache.flink.api.common.functions.Function">
+      <point x="-41.75" y="-16.0" />
+      <point x="2659.1915999278517" y="496.0" />
+      <point x="2604.5621843434374" y="496.0" />
+      <point x="2604.5621843434374" y="344.0" />
+      <point x="2427.212748917748" y="344.0" />
+      <point x="0.0" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.datastream.KeyedStream.IntervalJoined" target="org.apache.flink.streaming.api.datastream.KeyedStream">
+      <point x="0.0" y="-16.0" />
+      <point x="6147.712748917748" y="556.0" />
+      <point x="6089.212748917748" y="556.0" />
+      <point x="39.5" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.datastream.DataStreamSink" target="org.apache.flink.annotation.Public">
+      <point x="0.0" y="-16.0" />
+      <point x="5424.824612193364" y="162.0" />
+      <point x="3035.0520346320336" y="162.0" />
+      <point x="10.08928571428578" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.windowing.windows.GlobalWindow" target="org.apache.flink.streaming.api.windowing.windows.Window">
+      <point x="0.0" y="-16.0" />
+      <point x="0.0" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.datastream.JoinedStreams.Where.EqualTo" target="org.apache.flink.annotation.Public">
+      <point x="-30.5" y="-16.0" />
+      <point x="431.5" y="728.0" />
+      <point x="430.0" y="728.0" />
+      <point x="430.0" y="132.0" />
+      <point x="2974.51632034632" y="132.0" />
+      <point x="-50.44642857142844" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.functions.sink.RichSinkFunction" target="org.apache.flink.annotation.Public">
+      <point x="-67.66666666666652" y="-16.0" />
+      <point x="2214.2749332611847" y="436.0" />
+      <point x="1713.5833333333337" y="436.0" />
+      <point x="1713.5833333333337" y="192.0" />
+      <point x="2998.730606060605" y="192.0" />
+      <point x="-26.232142857142662" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.operators.StreamMap" target="org.apache.flink.streaming.api.operators.OneInputStreamOperator">
+      <point x="35.0" y="-16.0" />
+      <point x="4557.037337662338" y="718.0" />
+      <point x="5116.907945526698" y="718.0" />
+      <point x="-64.25" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.operators.ProcessOperator" target="org.apache.flink.streaming.api.operators.AbstractUdfStreamOperator">
+      <point x="-48.5" y="-16.0" />
+      <point x="4286.537337662338" y="688.0" />
+      <point x="4513.422555916309" y="688.0" />
+      <point x="-81.14285714285688" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.datastream.JoinedStreams" target="org.apache.flink.annotation.Public">
+      <point x="0.0" y="-16.0" />
+      <point x="1148.583333333334" y="162.0" />
+      <point x="2986.623463203462" y="162.0" />
+      <point x="-38.33928571428578" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.datastream.CoGroupedStreams.UnionKeySelector" target="org.apache.flink.streaming.api.datastream.CoGroupedStreams">
+      <point x="50.75" y="-16.0" />
+      <point x="3143.6915999278517" y="546.0" />
+      <point x="3274.9870544733058" y="546.0" />
+      <point x="-18.454545454545496" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.datastream.DataStreamSource" target="org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator">
+      <point x="50.75" y="-16.0" />
+      <point x="6719.212748917748" y="556.0" />
+      <point x="6740.462748917748" y="556.0" />
+      <point x="-73.25" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.api.common.functions.AbstractRichFunction" target="org.apache.flink.annotation.Public">
+      <point x="-59.75" y="-16.0" />
+      <point x="2090.762184343437" y="294.0" />
+      <point x="2052.5333333333338" y="294.0" />
+      <point x="2052.5333333333338" y="202.0" />
+      <point x="3002.76632034632" y="202.0" />
+      <point x="-22.19642857142844" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator" target="org.apache.flink.streaming.api.datastream.DataStream">
+      <point x="-73.25" y="-16.0" />
+      <point x="6740.462748917748" y="344.0" />
+      <point x="6389.879415584415" y="344.0" />
+      <point x="49.66666666666697" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.operators.AbstractUdfStreamOperator" target="org.apache.flink.streaming.api.operators.AbstractStreamOperator">
+      <point x="71.0" y="-16.0" />
+      <point x="4665.565413059166" y="556.0" />
+      <point x="4811.657945526698" y="556.0" />
+      <point x="-64.25" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.transformations.SplitTransformation" target="org.apache.flink.streaming.api.transformations.StreamTransformation">
+      <point x="0.0" y="-16.0" />
+      <point x="2009.0" y="989.0" />
+      <point x="1547.9545454545455" y="989.0" />
+      <point x="43.454545454545496" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.datastream.IterativeStream.ConnectedIterativeStreams" target="org.apache.flink.annotation.Public">
+      <point x="94.66666666666697" y="-16.0" />
+      <point x="7093.629415584415" y="728.0" />
+      <point x="7110.962748917748" y="728.0" />
+      <point x="7110.962748917748" y="62.0" />
+      <point x="3075.4091774891767" y="62.0" />
+      <point x="50.44642857142844" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.operators.StreamGroupedFold" target="org.apache.flink.streaming.api.operators.OneInputStreamOperator">
+      <point x="53.0" y="-16.0" />
+      <point x="5825.608266594518" y="638.0" />
+      <point x="5288.241278860031" y="638.0" />
+      <point x="107.08333333333303" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.windowing.windows.TimeWindow" target="org.apache.flink.streaming.api.windowing.windows.Window">
+      <point x="0.0" y="-16.0" />
+      <point x="306.5" y="536.0" />
+      <point x="853.2142857142858" y="536.0" />
+      <point x="-32.285714285714334" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.operators.AbstractStreamOperator.CountingOutput" target="org.apache.flink.streaming.api.operators.AbstractStreamOperator">
+      <point x="0.0" y="-16.0" />
+      <point x="64.25" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.transformations.TwoInputTransformation" target="org.apache.flink.streaming.api.transformations.StreamTransformation">
+      <point x="0.0" y="-16.0" />
+      <point x="977.5" y="989.0" />
+      <point x="1461.0454545454545" y="989.0" />
+      <point x="-43.454545454545496" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.operators.OneInputStreamOperator" target="org.apache.flink.streaming.api.operators.StreamOperator">
+      <point x="0.0" y="-16.0" />
+      <point x="5181.157945526698" y="344.0" />
+      <point x="5219.824612193364" y="344.0" />
+      <point x="0.0" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.functions.ProcessFunction.Context" target="org.apache.flink.streaming.api.functions.ProcessFunction">
+      <point x="0.0" y="-16.0" />
+      <point x="2705.8495039682557" y="728.0" />
+      <point x="2548.9415999278517" y="728.0" />
+      <point x="48.5" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.datastream.JoinedStreams.WithWindow" target="org.apache.flink.streaming.api.windowing.windows.Window">
+      <point x="-49.66666666666663" y="-16.0" />
+      <point x="1013.8333333333335" y="546.0" />
+      <point x="901.6428571428569" y="546.0" />
+      <point x="16.14285714285711" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.datastream.IterativeStream.ConnectedIterativeStreams" target="org.apache.flink.streaming.api.datastream.IterativeStream">
+      <point x="-94.66666666666697" y="-16.0" />
+      <point x="6904.296082251081" y="728.0" />
+      <point x="6886.962748917748" y="728.0" />
+      <point x="0.0" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.datastream.JoinedStreams.FlatJoinCoGroupFunction" target="org.apache.flink.api.common.functions.Function">
+      <point x="0.0" y="-16.0" />
+      <point x="1728.0504292929293" y="324.0" />
+      <point x="2391.4854761904753" y="324.0" />
+      <point x="-35.72727272727252" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator" target="org.apache.flink.annotation.Public">
+      <point x="73.25" y="-16.0" />
+      <point x="6886.962748917748" y="82.0" />
+      <point x="3067.3377489177483" y="82.0" />
+      <point x="42.375" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.operators.ProcessOperator.ContextImpl" target="org.apache.flink.streaming.api.functions.ProcessFunction.Context">
+      <point x="-39.5" y="-16.0" />
+      <point x="4256.037337662338" y="805.0" />
+      <point x="2736.3495039682557" y="805.0" />
+      <point x="30.5" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.datastream.CoGroupedStreams.Input1Tagger" target="org.apache.flink.streaming.api.datastream.CoGroupedStreams">
+      <point x="41.75" y="-16.0" />
+      <point x="2929.6915999278517" y="536.0" />
+      <point x="3256.5325090187607" y="536.0" />
+      <point x="-36.90909090909099" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.datastream.CoGroupedStreams.Where" target="org.apache.flink.annotation.Public">
+      <point x="26.0" y="-16.0" />
+      <point x="5822.212748917748" y="152.0" />
+      <point x="3039.0877489177483" y="152.0" />
+      <point x="14.125" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.datastream.SplitStream" target="org.apache.flink.streaming.api.datastream.DataStream">
+      <point x="0.0" y="-16.0" />
+      <point x="0.0" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.datastream.JoinedStreams.JoinCoGroupFunction" target="org.apache.flink.api.common.functions.Function">
+      <point x="0.0" y="-16.0" />
+      <point x="1456.583333333334" y="314.0" />
+      <point x="2379.5763852813843" y="314.0" />
+      <point x="-47.63636363636351" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.operators.StreamSink.SimpleContext" target="org.apache.flink.streaming.api.operators.StreamSink">
+      <point x="-44.0" y="-16.0" />
+      <point x="5665.120625901879" y="805.0" />
+      <point x="4865.629415584415" y="805.0" />
+      <point x="0.0" y="16.0" />
+    </edge>
+    <edge source="org.apache.flink.streaming.api.datastream.CoGroupedStreams.CoGroupWindowFunction" target="org.apache.flink.api.common.functions.AbstractRichFunction">
+      <point x="-31.0" y="-16.0" />
+      <point x="2005.4415999278515" y="486.0" />
+      <point x="2150.512184343437" y="486.0" />
+      <point x="0.0" y="16.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="1854.0" y="597.5" />
+  <SelectedNodes>
+    <node>org.apache.flink.streaming.api.operators.StreamGroupedFold</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Inner Classes</Category>
+  </Categories>
   <SCOPE>All</SCOPE>
   <VISIBILITY>private</VISIBILITY>
 </Diagram>
