@@ -13,6 +13,7 @@ spec:
   ports:
     - port: 8081
       targetPort: 8081
+      nodePort: 30000
       name: ui
     - port: 6123
       targetPort: 6123
@@ -36,8 +37,8 @@ spec:
     spec:
       containers:
         - name: flink
-          image: flink
-          command:
+          image: flink:scala_2.11
+          args:
             - jobmanager
           env:
             - name: JOB_MANAGER_RPC_ADDRESS
@@ -50,6 +51,14 @@ spec:
               port: 8081
             initialDelaySeconds: 5
             periodSeconds: 5
+          volumeMounts:
+            - mountPath: /home
+              name: job
+      volumes:
+        - name: job
+          hostPath:
+            path: /home
+            type: Directory
 ---
 apiVersion: v1
 kind: Service
@@ -83,7 +92,9 @@ spec:
     spec:
       containers:
         - name: flink
-          image: flink
+          image: flink:scala_2.11
+          args:
+            - taskmanager
           ports:
             - containerPort: 6121
             - containerPort: 6122
@@ -94,7 +105,3 @@ spec:
         - name: init-jobmanager
           image: busybox
           command: ['sh', '-c', 'until nslookup jobmanager; do echo waiting for jobmanager; sleep 2; done;']
-
-
-
-

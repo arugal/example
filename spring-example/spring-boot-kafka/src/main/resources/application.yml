@@ -1,3 +1,8 @@
+spring:
+  kafka:
+    bootstrap-servers: k8s.sunnus3.online:35012
 kafka:
-  bootstrap: kafka:9092
-  group: group-id
+  topic:
+    group-id: flink
+    topic-name:
+      - flink-test

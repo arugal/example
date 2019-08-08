@@ -19,6 +19,7 @@ spec:
     - name: wordpress
       port: 80
       targetPort: 80
+      nodePort: 35002
   selector:
     app: wordpress
   type: NodePort
@@ -52,7 +53,6 @@ spec:
             timeoutSeconds: 5
           readinessProbe:
             exec:
-              # Check we can execute queries over TCP (skip-networking is off).
               command: ["mysql", "-h", "127.0.0.1", "-e", "SELECT 1"]
             initialDelaySeconds: 5
             periodSeconds: 2
