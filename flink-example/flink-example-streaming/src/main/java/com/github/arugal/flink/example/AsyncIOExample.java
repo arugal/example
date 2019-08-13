@@ -1,6 +1,7 @@
 package com.github.arugal.flink.example;
 
 import org.apache.flink.api.common.functions.FlatMapFunction;
+import org.apache.flink.api.common.functions.MapFunction;
 import org.apache.flink.api.java.tuple.Tuple2;
 import org.apache.flink.api.java.utils.ParameterTool;
 import org.apache.flink.configuration.Configuration;
@@ -245,6 +246,15 @@ public class AsyncIOExample {
                 .keyBy(0)
                 .sum(1)
                 .print();
+
+        result.map(new MapFunction<String, Tuple2<String, Integer>>() {
+            private static final long serialVersionUID = 8376949058186437818L;
+
+            @Override
+            public Tuple2<String, Integer> map(String s) throws Exception {
+                return new Tuple2<>(s + " from map", 1);
+            }
+        }).print();
 
         env.execute("Async IO Example");
     }

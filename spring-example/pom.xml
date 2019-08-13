@@ -27,7 +27,8 @@
         <module>spring-boot-async</module>
         <module>spring-boot-docker</module>
         <module>aop-example1</module>
-    </modules>
+		<module>spring-boot-webflux</module>
+	</modules>
     <packaging>pom</packaging>
 
 
