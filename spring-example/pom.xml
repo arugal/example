@@ -28,6 +28,7 @@
         <module>spring-boot-docker</module>
         <module>aop-example1</module>
 		<module>spring-boot-webflux</module>
+		<module>spring-boot-quartz</module>
 	</modules>
     <packaging>pom</packaging>
 
