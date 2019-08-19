@@ -47,7 +47,6 @@
                 <groupId>io.fabric8</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
                 <configuration>
-                    <dockerHost>tcp://10.42.0.1:2375</dockerHost>
                     <images>
                         <image>
                             <name>${project.artifactId}:${project.version}</name>
