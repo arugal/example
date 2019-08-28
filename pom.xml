@@ -31,7 +31,8 @@
         <module>zookeeper-example</module>
         <module>fabric8-example</module>
         <module>flink-example</module>
-    </modules>
+		<module>httpclient-example</module>
+	</modules>
     <packaging>pom</packaging>
     <name>Example</name>
 
