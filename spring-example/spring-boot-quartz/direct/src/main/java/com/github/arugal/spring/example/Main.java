@@ -20,7 +20,6 @@ public class Main {
 		CronTrigger cron =
 			TriggerBuilder.newTrigger().withIdentity("cron", "1").withSchedule(CronScheduleBuilder.cronSchedule("10 * * * * ?")).build();
 
-
 		scheduler.scheduleJob(jobDetail, cron);
 		scheduler.start();
 	}

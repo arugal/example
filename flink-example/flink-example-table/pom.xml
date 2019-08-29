@@ -8,8 +8,8 @@
         <version>1.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
-    <artifactId>Flink Example : Flink Example Table</artifactId>
+	<artifactId>flink-example-table</artifactId>
+    <name>Flink Example : Flink Example Table</name>
 
     <dependencies>
         <!-- Table ecosystem -->
@@ -17,26 +17,38 @@
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-table-api-java-bridge_${scala.binary.version}</artifactId>
             <version>${flink.version}</version>
-            <scope>compile</scope>
-        </dependency>
+			<scope>compile</scope>
+		</dependency>
         <dependency>
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-table-api-scala-bridge_${scala.binary.version}</artifactId>
             <version>${flink.version}</version>
-            <scope>compile</scope>
-        </dependency>
+			<scope>compile</scope>
+		</dependency>
         <dependency>
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-table-planner_${scala.binary.version}</artifactId>
             <version>${flink.version}</version>
-            <scope>compile</scope>
-        </dependency>
+			<scope>compile</scope>
+		</dependency>
 
         <dependency>
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-streaming-scala_${scala.binary.version}</artifactId>
             <version>${flink.version}</version>
-            <scope>compile</scope>
-        </dependency>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.flink</groupId>
+			<artifactId>flink-sql-connector-elasticsearch6_2.11</artifactId>
+			<version>${flink.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.flink</groupId>
+			<artifactId>flink-json</artifactId>
+			<version>${flink.version}</version>
+			<scope>compile</scope>
+		</dependency>
     </dependencies>
 </project>
