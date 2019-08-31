@@ -52,6 +52,8 @@ public class StreamDDLExample {
 		}
 
 
+
+
 		StringBuilder configStringBuilder = new StringBuilder();
 		final String lineSeparator = System.getProperty("line.separator");
 		configStringBuilder
@@ -67,6 +69,7 @@ public class StreamDDLExample {
 
 		StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
 		StreamTableEnvironment tEnv = StreamTableEnvironment.create(env);
+
 
 		if (checkpoint) {
 			env.setStateBackend(new FsStateBackend(checkpointDataUri));
