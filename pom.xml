@@ -32,6 +32,8 @@
         <module>fabric8-example</module>
         <module>flink-example</module>
 		<module>httpclient-example</module>
+		<module>calcite-example</module>
+		<module>git-commit-id-example</module>
 	</modules>
     <packaging>pom</packaging>
     <name>Example</name>
