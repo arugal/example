@@ -21,12 +21,6 @@
 		</dependency>
         <dependency>
             <groupId>org.apache.flink</groupId>
-            <artifactId>flink-table-api-scala-bridge_${scala.binary.version}</artifactId>
-            <version>${flink.version}</version>
-			<scope>compile</scope>
-		</dependency>
-        <dependency>
-            <groupId>org.apache.flink</groupId>
             <artifactId>flink-table-planner_${scala.binary.version}</artifactId>
             <version>${flink.version}</version>
 			<scope>compile</scope>
@@ -49,6 +43,11 @@
 			<artifactId>flink-json</artifactId>
 			<version>${flink.version}</version>
 			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.flink</groupId>
+			<artifactId>flink-sql-connector-kafka-0.9_2.11</artifactId>
+			<version>${flink.version}</version>
 		</dependency>
     </dependencies>
 </project>

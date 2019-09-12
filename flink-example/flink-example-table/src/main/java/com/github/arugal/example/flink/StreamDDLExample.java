@@ -51,9 +51,6 @@ public class StreamDDLExample {
 			throw e;
 		}
 
-
-
-
 		StringBuilder configStringBuilder = new StringBuilder();
 		final String lineSeparator = System.getProperty("line.separator");
 		configStringBuilder
@@ -100,7 +97,8 @@ public class StreamDDLExample {
 
 		tEnv.sqlUpdate("INSERT INTO Sink SELECT meterId, rawPap FROM " + table);
 
-		env.execute();
+//		env.execute();
+		System.out.println(env.getExecutionPlan());
 	}
 
 	private static void ddl(StreamTableEnvironment tEnv, int loop) throws Exception {
