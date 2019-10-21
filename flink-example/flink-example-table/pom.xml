@@ -46,6 +46,12 @@
 		</dependency>
 		<dependency>
 			<groupId>org.apache.flink</groupId>
+			<artifactId>flink-csv</artifactId>
+			<version>${flink.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.flink</groupId>
 			<artifactId>flink-sql-connector-kafka-0.9_2.11</artifactId>
 			<version>${flink.version}</version>
 		</dependency>
