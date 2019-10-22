@@ -44,6 +44,8 @@ public class FileSystemExample {
 
         Table table = tEnv.sqlQuery("select * from fac");
 
+
+
         tEnv.toAppendStream(table, Fac.class).print();
         env.execute();
     }
