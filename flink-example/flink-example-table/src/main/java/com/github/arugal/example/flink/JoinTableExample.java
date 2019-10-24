@@ -72,7 +72,6 @@ public class JoinTableExample {
         public DataStream<Row> getDataStream(StreamExecutionEnvironment execEnv) {
             return function.apply(execEnv);
         }
-
         @Override
         public TypeInformation<Row> getReturnType() {
             return new RowTypeInfo(schema.getFieldTypes(), schema.getFieldNames());

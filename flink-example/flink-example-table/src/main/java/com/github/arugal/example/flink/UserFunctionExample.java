@@ -8,6 +8,7 @@ import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.table.api.Table;
 import org.apache.flink.table.api.java.StreamTableEnvironment;
+import org.apache.flink.table.functions.FunctionContext;
 import org.apache.flink.table.functions.ScalarFunction;
 import org.apache.flink.table.functions.TableFunction;
 
@@ -20,7 +21,7 @@ import java.util.function.Consumer;
 public class UserFunctionExample {
 
     public static void main(String[] args) throws Exception {
-        String[] finalArgs = args.length < 1 ? new String[] {"priceCalculate"} : args;
+        String[] finalArgs = args.length < 1 ? new String[] {"joinEmail"} : args;
         wrapStreamTableEnv(tEnv -> {
             switch (finalArgs[0]) {
                 case "hashCode": {
@@ -45,6 +46,7 @@ public class UserFunctionExample {
                     Table result = tEnv.sqlQuery("select id, product, amount, `count`, priceCalculate(amount, `count`) as price from record");
 
                     tEnv.toAppendStream(result, PriceRecord.class).print();
+
                 }
             }
         });
@@ -137,6 +139,20 @@ public class UserFunctionExample {
 
         public void eval(Long id) {
             collect(new Tuple1<>("user@gmial.com"));
+        }
+
+        @Override
+        public void close() throws Exception {
+            System.out.println("close");
+        }
+
+
+        /**
+         * Setup method for user-defined function. It can be used for initialization work.
+         * By default, this method does nothing.
+         */
+        public void open(FunctionContext context) throws Exception {
+            System.out.println("open");
         }
     }
 
