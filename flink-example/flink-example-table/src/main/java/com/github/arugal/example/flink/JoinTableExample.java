@@ -4,10 +4,18 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.apache.flink.api.common.io.DefaultInputSplitAssigner;
+import org.apache.flink.api.common.io.RichInputFormat;
+import org.apache.flink.api.common.io.statistics.BaseStatistics;
 import org.apache.flink.api.common.typeinfo.TypeInformation;
 import org.apache.flink.api.common.typeinfo.Types;
 import org.apache.flink.api.java.tuple.Tuple2;
+import org.apache.flink.api.java.typeutils.ResultTypeQueryable;
 import org.apache.flink.api.java.typeutils.RowTypeInfo;
+import org.apache.flink.configuration.Configuration;
+import org.apache.flink.core.io.GenericInputSplit;
+import org.apache.flink.core.io.InputSplit;
+import org.apache.flink.core.io.InputSplitAssigner;
 import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.api.functions.sink.SinkFunction;
@@ -18,8 +26,10 @@ import org.apache.flink.table.sinks.UpsertStreamTableSink;
 import org.apache.flink.table.sources.StreamTableSource;
 import org.apache.flink.types.Row;
 
+import java.io.IOException;
 import java.util.Arrays;
-import java.util.function.Function;
+import java.util.Iterator;
+import java.util.List;
 
 import static com.github.arugal.example.flink.Example.wrapStreamTableEnv;
 
@@ -34,12 +44,13 @@ public class JoinTableExample {
 
         wrapStreamTableEnv((env, tEnv) -> {
 
-            tEnv.registerTableSource("account", new Source(Account.getTableSchema(), Account::getDataStream));
-            tEnv.registerTableSource("order", new Source(Order.getTableSchema(), Order::getDataStream));
-
+            tEnv.registerTableSource("account", new Source(Account.getTableSchema(), Account.getDatas()));
+            tEnv.registerTableSource("order", new Source(Order.getTableSchema(), Order.getDatas()));
 
             tEnv.registerTableSink("accountOrder", new Sink(AccountOrder.getTableSchema()));
 
+//            Table table = tEnv.sqlQuery("select * from account");
+//            tEnv.toAppendStream(table, Account.class).print();
             tEnv.sqlUpdate("insert into accountOrder select account.id, account.name, `order`.shop " +
                 "from account left join `order` on account.id = `order`.id where `order`.id is not null");
         });
@@ -51,11 +62,14 @@ public class JoinTableExample {
 
         private TableSchema schema;
 
-        private Function<StreamExecutionEnvironment, DataStream<Row>> function;
+        private List<Object[]> datas;
 
-        public Source(TableSchema schema, Function<StreamExecutionEnvironment, DataStream<Row>> function) {
+        private RowTypeInfo rowTypeInfo;
+
+        public Source(TableSchema schema, List<Object[]> datas) {
             this.schema = schema;
-            this.function = function;
+            this.datas = datas;
+            this.rowTypeInfo = new RowTypeInfo(schema.getFieldTypes(), schema.getFieldNames());
         }
 
         @Override
@@ -70,11 +84,88 @@ public class JoinTableExample {
 
         @Override
         public DataStream<Row> getDataStream(StreamExecutionEnvironment execEnv) {
-            return function.apply(execEnv);
+            return execEnv.createInput(new SourceInputFormat(datas, rowTypeInfo), getReturnType()).name(explainSource());
         }
+
         @Override
         public TypeInformation<Row> getReturnType() {
-            return new RowTypeInfo(schema.getFieldTypes(), schema.getFieldNames());
+            return rowTypeInfo;
+        }
+    }
+
+    public static class SourceInputFormat extends RichInputFormat<Row, InputSplit> implements ResultTypeQueryable<Row> {
+
+        private static final long serialVersionUID = -1941084216786916132L;
+
+
+        private List<Object[]> data;
+
+        private Iterator<Object[]> iterator;
+
+        private RowTypeInfo rowTypeInfo;
+
+        public SourceInputFormat(List<Object[]> data, RowTypeInfo rowTypeInfo) {
+            this.data = data;
+            this.rowTypeInfo = rowTypeInfo;
+        }
+
+        @Override
+        public void configure(Configuration parameters) {
+
+        }
+
+        @Override
+        public BaseStatistics getStatistics(BaseStatistics cachedStatistics) throws IOException {
+            return cachedStatistics;
+        }
+
+        @Override
+        public InputSplit[] createInputSplits(int minNumSplits) throws IOException {
+            return new GenericInputSplit[]{new GenericInputSplit(0, 1)};
+        }
+
+        @Override
+        public InputSplitAssigner getInputSplitAssigner(InputSplit[] inputSplits) {
+            return new DefaultInputSplitAssigner(inputSplits);
+        }
+
+        @Override
+        public void openInputFormat() throws IOException {
+            iterator = data.iterator();
+        }
+
+        @Override
+        public void open(InputSplit split) throws IOException {
+            iterator = data.iterator();
+        }
+
+        @Override
+        public boolean reachedEnd() throws IOException {
+            return iterator != null && iterator.hasNext();
+        }
+
+        @Override
+        public Row nextRecord(Row reuse) throws IOException {
+            Object[] datas = iterator.next();
+            for (int i = 0; i < datas.length; i++) {
+                reuse.setField(i, datas[i]);
+            }
+            return reuse;
+        }
+
+        @Override
+        public void closeInputFormat() throws IOException {
+//            iterator = null;
+        }
+
+        @Override
+        public void close() throws IOException {
+//            iterator = null;
+        }
+
+        @Override
+        public TypeInformation<Row> getProducedType() {
+            return rowTypeInfo;
         }
     }
 
@@ -124,12 +215,10 @@ public class JoinTableExample {
 
         @Override
         public void setKeyFields(String[] keyFields) {
-            System.out.println("keyFields:" + keyFields);
         }
 
         @Override
         public void setIsAppendOnly(Boolean isAppendOnly) {
-            System.out.println("isAppendOnly:" + isAppendOnly);
         }
 
         @Override
@@ -140,6 +229,8 @@ public class JoinTableExample {
         @Override
         public void emitDataStream(DataStream<Tuple2<Boolean, Row>> dataStream) {
             dataStream.addSink(new SinkFunction<Tuple2<Boolean, Row>>() {
+                private static final long serialVersionUID = -2482330112306581813L;
+
                 @Override
                 public void invoke(Tuple2<Boolean, Row> value, Context context) throws Exception {
                     System.out.println(value.f1);
@@ -179,6 +270,18 @@ public class JoinTableExample {
             return builder.build();
         }
 
+
+        public static List<Object[]> getDatas() {
+            return Arrays.asList(
+                new Object[] {1L, "zw1"},
+                new Object[] {2L, "zw2"},
+                new Object[] {3L, "zw3"},
+                new Object[] {4L, "zw4"},
+                new Object[] {5L, "zw5"},
+                new Object[] {6L, "zw6"}
+            );
+        }
+
         public static DataStream<Row> getDataStream(StreamExecutionEnvironment execEnv) {
             return execEnv.fromCollection(Arrays.asList(
                 Row.of(1L, "zw1"),
@@ -206,6 +309,17 @@ public class JoinTableExample {
             builder.field("shop", Types.STRING);
 
             return builder.build();
+        }
+
+        public static List<Object[]> getDatas() {
+            return Arrays.asList(
+                new Object[] {1L, "a"},
+                new Object[] {2L, "b"},
+                new Object[] {3L, "c"},
+                new Object[] {4L, "d"},
+                new Object[] {5L, "e"},
+                new Object[] {6L, "f"}
+            );
         }
 
         public static DataStream<Row> getDataStream(StreamExecutionEnvironment execEnv) {

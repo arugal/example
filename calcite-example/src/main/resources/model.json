@@ -1,0 +1,12 @@
+{
+  "version": "1.0",
+  "defaultSchema": "example",
+  "schema": {
+    "name": "example",
+    "type": "custom",
+    "factory": "org.apache.calcite.adapter.csv.CsvSchemaFactory",
+    "operand": {
+      "directory": "sales"
+    }
+  }
+}

@@ -24,7 +24,7 @@ public class FileSystemExample {
         map.put("connector.property-version", "1");
         map.put("format.property-version", "1");
 
-        map.put("connector.path", "file:///Users/zhangwei/Downloads/mapping_csv.csv");
+        map.put("connector.path", "hdfs://192.168.2.105:8020/acquarium/data/mapping_csv.csv");
         map.put("format.fields.0.type", "LONG");
         map.put("format.fields.0.name", "id");
         map.put("format.fields.1.type", "VARCHAR");
@@ -43,8 +43,6 @@ public class FileSystemExample {
         tEnv.registerTableSource("fac", factory.createTableSource(map));
 
         Table table = tEnv.sqlQuery("select * from fac");
-
-
 
         tEnv.toAppendStream(table, Fac.class).print();
         env.execute();
